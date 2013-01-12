@@ -7,7 +7,6 @@ href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons
 License</a>.
 
 
-
 Code, Algorithms, etc. in this Repository are licensed:
 
 The MIT License
