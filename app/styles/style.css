@@ -20,7 +20,15 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-h1,
+h1 {
+    font-size: 1.6em;
+    margin: 0;
+    letter-spacing: -.03em;
+    font-weight: 300;
+    font-family: 'Nimbus-Sans-Condensed', sans-serif;
+}
+
+
 h2,
 h3,
 h4 {
@@ -63,16 +71,31 @@ a {
 }
 
 .nav {
-    display: none;
-    margin: 0;
+    margin: -1.9em 0 0;
     font-family: 'Nimbus-Sans-Condensed', sans-serif;
+    float: right;
 }
 
-.nav a {
+.nav-item {
+    display: inline-block;
+}
+
+.nav-item a {
+    display: block;
+    color: #FFF;
+    padding: .25em;
     -webkit-transition: all .15s;
        -moz-transition: all .15s;
          -o-transition: all .15s;
             transition: all .15s;
+}
+
+.nav-item a:hover {
+    color: #B9CC72;
+}
+
+.nav-item span {
+    display: none;
 }
 
 .header {
@@ -110,6 +133,16 @@ a {
     display: none;
 }
 
+@media all and (min-width: 360px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .nav {
+        margin-top: -2.15em;
+    }
+}
+
 
 @media all and (min-width: 780px) {
     body {
@@ -127,18 +160,31 @@ a {
         bottom: 0;
     }
 
-    .nav i {
+    .nav {
+        margin: 0;
+        float: none;
+    }
+
+    .nav-item {
+        display: block;
+    }
+
+    .nav-item i {
         margin-right: .35em;
     }
 
-    .nav a {
+    .nav-item a {
         display: block;
         padding: .25em 1em;
     }
 
-    .nav a:hover {
+    .nav-item a:hover {
         background-color: #B9CC72;
         color: #252D38;
+    }
+
+    .nav-item span {
+        display: inline-block;
     }
 
     .header-title {
