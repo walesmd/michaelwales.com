@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,18 +10,17 @@
 
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
 
-    <!-- build:css css/app.css -->
     <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
-    <!-- endbuild -->
 
     <script type="text/javascript" src="//use.typekit.net/byn8skt.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
+
 <body class="page">
     <div class="sidebar">
         <header class="header">
-            <h1 class="header-title"><a href="#">
+            <h1 class="header-title"><a href="/">
                 <span>M</span>ichael <span>W</span>ales
             </a></h1>
             <h2 class="header-subtitle">Full-Stack Web Developer &amp; Open Source Advocate</h2>
@@ -30,13 +29,13 @@
         <nav>
             <ul class="nav fa-ul">
                 <li class="nav-item nav-item-active">
-                    <a href="#" title="Articles"><i class="fa fa-fw fa-file-o"></i><span>Articles</span></a>
+                    <a href="/articles" title="Articles"><i class="fa fa-fw fa-file-o"></i><span>Articles</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" title="Code"><i class="fa fa-fw fa-code"></i><span>Code</span></a>
+                    <a href="/code" title="Code"><i class="fa fa-fw fa-code"></i><span>Code</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" title="About"><i class="fa fa-fw fa-question"></i><span>About</span></a>
+                    <a href="/about" title="About"><i class="fa fa-fw fa-question"></i><span>About</span></a>
                 </li>
             </ul>
         </nav>
@@ -44,14 +43,40 @@
 
     <main>
         <article class="post">
-            <h1 class="post-title">This is a header</h1>
+            <h1 class="post-title"><a href="/articles/2013/this-is-a-header">This is a header</a></h1>
             <time class="post-date" datetime="2013-10-30">30 Oct</time>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto laboriosam temporibus itaque eius vero facere voluptatem. Totam, libero, laudantium nisi eligendi vero quia ad recusandae commodi inventore voluptatem deserunt ex.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, earum aut assumenda unde. Error, quos, dolorum, est, exercitationem in quam repudiandae animi quo hic sint vitae quas ullam et sunt.</p>
+            <h2>This is a subheading</h2>
+            <p>Lorem ipsum dolor <a href="#">sit amet</a>, consectetur adipisicing elit. Alias, earum aut assumenda unde. Error, quos, dolorum, est, exercitationem in quam repudiandae animi quo hic sint vitae quas ullam et sunt.</p>
 
+            <h3>Another Heading</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, similique, veniam veritatis neque ipsa ullam soluta fuga! Commodi, temporibus aliquam aperiam. Sint, dignissimos, ipsam optio expedita odio adipisci nobis nesciunt.</p>
+
+            <ul>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+                <li>List Item 4</li>
+                <li>List Item 5</li>
+            </ul>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, dicta, ea numquam dolores reprehenderit voluptas optio id dolor natus eveniet voluptatum eligendi? Illo, autem, ad ea natus laboriosam facere excepturi.</p>
+
+            <p><img src="http://placehold.it/350x150" alt="Placeholder Image"></p>
+
+            <p><img src="http://placehold.it/150x150" alt="Right-aligned Placeholder Image" class="align-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, eaque, officia, facilis, sunt itaque voluptates inventore quae sint necessitatibus tempore molestiae maiores aperiam quasi provident mollitia impedit culpa sed vel!</p>
+
+            <p><img src="http://placehold.it/150x150" alt="Left-aligned Placeholder Image" class="align-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, inventore, placeat nam nesciunt voluptatibus blanditiis dolorum ea ipsum doloremque nulla provident odio tenetur in ut aperiam cumque corporis natus eius.</p>
+
+            <ol>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+                <li>List Item 4</li>
+                <li>List Item 5</li>
+            </ol>
         </article>
     </main>
 
@@ -59,8 +84,6 @@
 
     </footer>
 
-    <!-- build:js js/app.js -->
     <script src="scripts/app.js"></script>
-    <!-- endbuild -->
 </body>
 </html>
