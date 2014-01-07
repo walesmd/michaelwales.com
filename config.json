@@ -1,0 +1,6 @@
+{
+  "plugins": [
+    "wintersmith-nunjucks",
+    "./plugins/contentHelpers.js"
+  ]
+}

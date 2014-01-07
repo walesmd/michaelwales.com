@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+    <ol>
+        {% set articles = env.helpers.getSortedContentFolder('articles', contents) %}
+        {% for article in articles %}
+        <li><a href="{{ article.url }}">{{ article.title }}</a></li>
+        {% endfor %}
+    </ol>
+{% endblock %}

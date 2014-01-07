@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}{% endblock %} - Michael Wales</title>
+    <meta name="author" content="Michael Wales">
+    <meta name="description" content="With over 13 years developing web applications for the US Department of Defense and Intelligence communities, Michael Wales shares his unique perspective on a variety of web development and technology topics.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="/styles/style.css">
+
+    <script type="text/javascript" src="//use.typekit.net/byn8skt.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+
+<body class="page">
+    <div class="sidebar">
+        <header class="header">
+            <h1 class="header-title"><a href="/">
+                <span>M</span>ichael <span>W</span>ales
+            </a></h1>
+            <h2 class="header-subtitle">Full-Stack Web Developer &amp; Open Source Advocate</h2>
+        </header>
+
+        <nav>
+            <ul class="nav fa-ul">
+                <li class="nav-item nav-item-active">
+                    <a href="/articles" title="Articles"><i class="fa fa-fw fa-file-o"></i><span>Articles</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/code" title="Code"><i class="fa fa-fw fa-code"></i><span>Code</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" title="About"><i class="fa fa-fw fa-question"></i><span>About</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <article class="post">
+            {% block content %}
+            {% endblock %}
+        </article>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="scripts/app.min.js"></script>
+</body>
+</html>
