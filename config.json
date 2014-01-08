@@ -1,6 +1,9 @@
 {
-  "plugins": [
-    "wintersmith-nunjucks",
-    "./plugins/contentHelpers.js"
-  ]
+    "require": {
+        "moment": "moment"
+    },
+    "plugins": [
+        "wintersmith-nunjucks",
+        "./plugins/contentHelpers.js"
+    ]
 }
