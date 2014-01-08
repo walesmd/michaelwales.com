@@ -81,6 +81,14 @@ ol {
     clear: both;
 }
 
+code,
+kbd,
+pre,
+samp {
+    font-family: 'Source-Code-Pro';
+    font-size: 0.8em;
+}
+
 
 /* $ELEMENTS */
 .sidebar {
