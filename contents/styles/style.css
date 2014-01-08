@@ -141,6 +141,12 @@ samp {
     display: none;
 }
 
+.articles-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 .post {
     padding: .5em 1em;
     margin-top: 1em;
