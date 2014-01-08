@@ -25,7 +25,7 @@ h2,
 h3 {
     font-size: 1.6em;
     margin: 0;
-    letter-spacing: -0.03em;
+    letter-spacing: -.03em;
     font-weight: 300;
     font-family: 'Nimbus-Sans-Condensed', sans-serif;
     -webkit-transition: all .5s;
@@ -67,7 +67,7 @@ input[type="reset"] {
     background-color: #B9CC72;
     color: #252D38;
     border: 0;
-    border-radius: 0.15em;
+    border-radius: .15em;
     font-family: sans-serif;
 }
 
@@ -86,7 +86,7 @@ kbd,
 pre,
 samp {
     font-family: 'Source-Code-Pro';
-    font-size: 0.8em;
+    font-size: .8em;
 }
 
 
@@ -274,6 +274,7 @@ samp {
 
     .post-date {
         display: inline-block;
+        margin-left: .5em;
     }
 }
 
