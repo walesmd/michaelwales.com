@@ -187,7 +187,8 @@ samp {
 
 .post-date {
     color: #AAA;
-    display: none;
+    display: inline-block;
+    margin-left: .5em;
 }
 
 @media all and (min-width: 360px) {
@@ -276,11 +277,6 @@ samp {
 
     .post {
         padding: .5em 3em;
-    }
-
-    .post-date {
-        display: inline-block;
-        margin-left: .5em;
     }
 }
 
