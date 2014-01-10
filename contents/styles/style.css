@@ -22,10 +22,12 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-size: 1.6em;
     margin: 0;
     letter-spacing: -.03em;
+    line-height: 1.2em;
     font-weight: 300;
     font-family: 'Nimbus-Sans-Condensed', sans-serif;
     -webkit-transition: all .5s;
@@ -78,6 +80,7 @@ a {
 
 ul,
 ol {
+    margin-top: 0;
     clear: both;
 }
 
@@ -201,7 +204,11 @@ samp {
     }
 
     h3 {
-        font-size: 1.6em;
+        font-size: 1.4em;
+    }
+
+    h4 {
+        font-size: 1.2em;
     }
 
     img {
@@ -283,5 +290,11 @@ samp {
 @media all and (min-width: 780px) and (max-width: 1023px) {
     .post {
         padding: .5em 2em;
+    }
+}
+
+@media print {
+    .sidebar {
+        display: none;
     }
 }
