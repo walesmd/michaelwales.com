@@ -1,6 +1,6 @@
 ---
 title: Getting Started with GulpJS
-date: 7 February 2014
+date: 12 February 2014
 template: article.html
 ---
 
