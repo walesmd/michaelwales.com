@@ -3,14 +3,11 @@
   "version": "0.1.0",
   "description": "The blog of Michael Wales, Full Stack Web Developer and Open Source Advocate.",
   "main": "app/index.html",
-  "dependencies": {
-    "grunt": "~0.4.2"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-jshint": "~0.7.2",
-    "grunt-contrib-watch": "~0.5.3"
+    "moment": "~2.5.1",
+    "underscore": "~1.6.0",
+    "wintersmith-nunjucks": "~0.4.1"
   },
   "scripts": {
     "test": "grunt test"
