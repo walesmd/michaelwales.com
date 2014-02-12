@@ -194,6 +194,34 @@ samp {
     margin-left: .5em;
 }
 
+.social-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.social-nav-item {
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.social-nav-item i {
+    margin-right: 0.35em;
+}
+
+.social-nav-item a {
+    display: inline-block;
+    border-radius: 5px;
+    border-bottom: 0;
+    color: #252D38;
+    padding: 0.25em 0.5em;
+}
+
+.social-nav-item a:hover {
+    background: #252D38;
+    color: #FFF;
+    border-bottom: 0;
+}
+
 @media all and (min-width: 360px) {
     h1 {
         font-size: 2em;
@@ -249,6 +277,7 @@ samp {
 
     .nav {
         margin: 0;
+        padding: 0;
         float: none;
     }
 
@@ -257,12 +286,15 @@ samp {
     }
 
     .nav-item i {
+        display: inline-block;
+        width: 20px;
+        text-align: center;
         margin-right: .35em;
     }
 
     .nav-item a {
         display: block;
-        padding: .25em 1em;
+        padding: .25em 1em .25em 1.25em;
     }
 
     .nav-item a:hover {
