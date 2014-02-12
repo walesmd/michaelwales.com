@@ -17,13 +17,13 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 
-<body class="page">
+<body class="page" itemscope itemtype="//schema.org/Blog">
     <div class="sidebar">
-        <header class="header">
-            <h1 class="header-title"><a href="/">
+        <header class="header" itemscope itemtype="//schema.org/Person">
+            <h1 class="header-title" itemprop="name"><a href="/">
                 <span>M</span>ichael <span>W</span>ales
             </a></h1>
-            <h2 class="header-subtitle">Full-Stack Web Developer &amp; Open Source Advocate</h2>
+            <h2 class="header-subtitle" itemprop="jobTitle">Full-Stack Web Developer &amp; Open Source Advocate</h2>
         </header>
 
         <nav>
@@ -39,10 +39,8 @@
     </div>
 
     <main>
-        <article class="post">
-            {% block content %}
-            {% endblock %}
-        </article>
+        {% block content %}
+        {% endblock %}
     </main>
 
     <footer>
