@@ -1,17 +1,13 @@
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" 
-style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span 
-xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">All 
-Editorial Content</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.michaelwales.com/" 
-property="cc:attributionName" rel="cc:attributionURL">Michael Wales</a> is licensed under a <a rel="license" 
-href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported 
-License</a>.
+All editorial content by Michael Wales</span> is licensed under a <a rel="license"
+href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons
+Attribution-ShareAlike 3.0 Unported License</a>.
 
+-----
 
-Code, Algorithms, etc. in this Repository are licensed:
+All code, algorithms, etc. by Michael Wales are licensed under the MIT License
+unless stated otherwise.
 
-The MIT License
-
-Copyright (c) 2013 Michael Wales
+(c) 2013 Michael D. Wales
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

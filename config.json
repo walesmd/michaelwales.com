@@ -1,0 +1,12 @@
+{
+    "templates": "./templates",
+    "contents": "./contents",
+    "output": "./build",
+    "require": {
+        "moment": "moment"
+    },
+    "plugins": [
+        "wintersmith-nunjucks",
+        "./plugins/contentHelpers.js"
+    ]
+}
