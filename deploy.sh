@@ -1,7 +1,7 @@
 #!/bin/sh
 # Syncs static files with the walesmd.github.io repository
 
-rsync -rtvu ./build ../walesmd.github.io
+rsync -rtvu ./build/ ../walesmd.github.io/
 
 cd ../walesmd.github.io
 git add -A
