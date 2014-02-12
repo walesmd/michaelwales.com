@@ -1,7 +1,5 @@
-## MichaelWales.com
+# MichaelWales.com Site
+This repository is the code used to generate my personal site, [michaelwales.com](http://michaelwales.com).
 
-The blog of Michael Wales, Full Stack Web Developer and Open Source Advocate.
-
-### License
-
-See [LICENSE.md].
+## License
+This code is released under [the MIT License](LICENSE.md).

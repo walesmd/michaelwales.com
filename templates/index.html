@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+    <ol class="articles-list">
+        {% set articles = env.helpers.getSortedContentFolder('articles', contents) %}
+        {% for article in articles %}
+        <li class="article-list-item">
+            <h1 class="post-title"><a href="{{ article.url }}">{{ article.title }}</a></h1>
+            <time class="post-date" datetime="{{ moment(article.date).format('YYYY-MM-DD') }}">{{ moment(article.date).format('DD MMM') }}</time>
+        </li>
+        {% endfor %}
+    </ol>
+{% endblock %}
