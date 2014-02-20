@@ -92,6 +92,11 @@ samp {
     font-size: .8em;
 }
 
+blockquote {
+    border-left: 3px solid #586A84;
+    margin: 0 0 0 1.5em;
+}
+
 
 /* $ELEMENTS */
 .sidebar {
