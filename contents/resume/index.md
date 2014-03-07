@@ -7,6 +7,7 @@ template: resume.html
 
 * Self-taught Full-Stack Web Developer with over 16 years experience
 * Active Top Secret/SCI security clearance with counter-intelligence polygraph
+* 2014 Southwest Collegiate Cyber Defence Competion competitor
 * Open source software advocate, contributing to numerous projects include the PHP framework CodeIgniter, the Zsh shell framework Oh My Zsh, Adobe's Brackets code editor and the Boxee+ media server firmware
 
 
@@ -63,12 +64,16 @@ template: resume.html
 * CSS
 * JavaScript
 * PHP
-* SQL
+* NodeJS
 * Python
+* Ruby
+* SQL
+* MongoDB
 
 
 ## Awards and Recognition
 
+* Southwest Collegiate Cyber Defense Competition competitor, 2014
 * Kforce Government Solutions Associate of the Year, 2011
 * General Dynamics Engineering & Innovation Award Nominee, 2009
 * Information Manager of the Year, Airman - 2005
