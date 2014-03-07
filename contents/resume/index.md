@@ -73,9 +73,9 @@ template: resume.html
 
 ## Awards and Recognition
 
-* Southwest Collegiate Cyber Defense Competition competitor, 2014
-* Kforce Government Solutions Associate of the Year, 2011
-* General Dynamics Engineering & Innovation Award Nominee, 2009
+* Southwest Collegiate Cyber Defense Competition competitor - 2014
+* Kforce Government Solutions Associate of the Year - 2011
+* General Dynamics Engineering & Innovation Award Nominee - 2009
 * Information Manager of the Year, Airman - 2005
 * Information Manager of the Year, Airman - 2004
 * Communications & Information Airman of the Year - 2004
