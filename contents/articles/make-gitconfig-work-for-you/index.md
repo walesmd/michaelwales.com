@@ -10,7 +10,7 @@ This complexity leads some developers to seek out graphical Git clients to assis
 
 A `.gitconfig` file can reside in up to three locations within your filesystem, the location determining the scope in which the file's contents are considered:
 
-* Global ('~/.gitconfig`): The most common use, establishes global configuration options for a particular user.
+* Global (`~/.gitconfig`): The most common use, establishes global configuration options for a particular user.
 * System (`/etc/.gitconfig`): Rarely used, establishes configuration options for the entirety of the local system (all users on this computer).
 * Local (`~/Projects/this-project/.gitconfig`): A the repository level, establishes configuration options that only affect this repository. If this file were committed, the settings contained within would impact all users that clone this repository.
 
