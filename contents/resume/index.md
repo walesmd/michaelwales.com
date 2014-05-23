@@ -61,7 +61,7 @@ template: resume.html
 
 ## Other Projects
 
-* [StudentsGoneGlobal](http://studentsgoneglobal.com/), Co-Founder and CTO: A community for students travelling abroad, currently rebranding and expanding our target market
+* [StudentsGoneGlobal](http://studentsgoneglobal.com/), former Co-Founder and CTO: A community for students travelling abroad, currently rebranding and expanding our target market
 
 * [WoWCensus](https://web.archive.org/web/20050102005044/http://www.wowcensus.com/overall_stats.php): Produced in-game demographic analysis of the global World of Warcraft population using an in-game user interface modification and matching web service
 
