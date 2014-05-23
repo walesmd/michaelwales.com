@@ -13,8 +13,18 @@ template: resume.html
 
 ## Experience
 
+### Course Developer
+#### Udacity (Apr 2014 - Present)
+
+* Web Developer Curriculum Track: Aligning current courses, establishing flow of courses and identifying new courses to establish the Web Development Curriculum Track
+
+* Course Catalog Map: Identifying and establishing a "pathway" through Udacity's entire catalog of available courses based on related concepts, skills and student goals.
+
+* Effective JavaScript: Currently working with partners to define the scope and plan a course on JavaScript at the Intermediate-Advanced level.
+
+
 ### Lead Full Stack Web Developer
-#### Kforce Government Solutions (Oct 2010 - Present)
+#### Kforce Government Solutions (Oct 2010 - Apr 2014)
 
 * Leads a team of 6 remotely distributed developers through the SCRUM-based development cycle of government and commercial customer requested web-based applications
 
