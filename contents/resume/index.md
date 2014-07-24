@@ -13,8 +13,12 @@ template: resume.html
 
 ## Experience
 
-### Course Developer
+### Web Dev Curriculum Manager and Course Developer
 #### Udacity (Apr 2014 - Present)
+
+* Front-End and Back-End Web Developer Nano Degrees: Defined the scope of required and elective courses; worked with Business Development, Marketing, Product and Design teams on launch materials.
+
+* iOS Developer Nano Degree: Worked with Business Development, Marketing, Product and Design teams on launch materials.
 
 * Web Developer Curriculum Track: Aligning current courses, establishing flow of courses and identifying new courses to establish the Web Development Curriculum Track
 
