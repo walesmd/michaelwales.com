@@ -13,24 +13,24 @@ template: resume.html
 
 ## Experience
 
-### Web Dev Curriculum Manager and Course Developer
+### Web Dev Curriculum Manager
 #### Udacity (Apr 2014 - Present)
 
-* Front-End and Back-End Web Developer Nano Degrees: Defined the scope of required and elective courses; worked with Business Development, Marketing, Product and Design teams on launch materials.
+* Responsible for the development of the curriculum for the Front-End, Senior Front-End and Full Stack Web Developer Nanodegree programs and all courses related to web development
 
-* iOS Developer Nano Degree: Worked with Business Development, Marketing, Product and Design teams on launch materials.
+* Coordinates with Course Developers on upcoming courses to ensure course content is relevant to the future of web development
 
-* Web Developer Curriculum Track: Aligning current courses, establishing flow of courses and identifying new courses to establish the Web Development Curriculum Track
+* Provides technical and pedagogical expertise to Course Developers and Subject Matter Experts during the course development process
 
-* Course Catalog Map: Identifying and establishing a "pathway" through Udacity's entire catalog of available courses based on related concepts, skills and student goals.
+* Interacts with, encourages, and answers questions from over 2,000 active Nanodegree students through regularly scheduled office hours video chats, classroom forums, and chat rooms
 
-* Effective JavaScript: Currently working with partners to define the scope and plan a course on JavaScript at the Intermediate-Advanced level.
+* Writes content for the Udacity blog and Nanodegree newsletters reaching over one million students
 
 
 ### Lead Full Stack Web Developer
 #### Kforce Government Solutions (Oct 2010 - Apr 2014)
 
-* Leads a team of 6 remotely distributed developers through the SCRUM-based development cycle of government and commercial customer requested web-based applications
+* Lead a team of 6 remotely distributed developers through the SCRUM-based development cycle of government and commercial customer requested web-based applications
 
 * Managed training and administrative requirements of personnel across two government contracts within the Defense Intelligence Agency (DIA), ensuring developers met government and partner company training requirements
 
