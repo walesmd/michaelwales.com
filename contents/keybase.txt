@@ -1,0 +1,82 @@
+==================================================================
+https://keybase.io/walesmd
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://michaelwales.com
+  * I am walesmd (https://keybase.io/walesmd) on keybase.
+  * I have a public key with fingerprint B810 4894 0842 8ED7 C155  9765 6F76 BD21 17ED 0D34
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.7.9"
+        },
+        "key": {
+            "fingerprint": "b810489408428ed7c15597656f76bd2117ed0d34",
+            "host": "keybase.io",
+            "key_id": "6F76BD2117ED0D34",
+            "uid": "f9b7fd30487b13820b623248cc637219",
+            "username": "walesmd"
+        },
+        "merkle_root": {
+            "ctime": 1433292291,
+            "hash": "31ec3620a676766ef01b30c1f47e2ab8c6cb9ba4d5f5b0a1955c76edb56279c08eb94bdb107c8c2e1666c23e0bb48847e000dba45e18d9c695a41c9f6f6ac6af",
+            "seqno": 236711
+        },
+        "service": {
+            "hostname": "michaelwales.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1433292369,
+    "expire_in": 157680000,
+    "prev": "ca84dec86a17bb9a3adccd20612f01165e66b82190c571b26a92d7a586e30cce",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owFVUn1MVWUcvpcIxEEwckLmlh6diNLlfL7nHCoSBowLqZWw0Eo673veCwfuvQfP
+vVxEwjlmGUzF2SA+LLMxwFIQlI+KglIwwYgc5hxloojBprgpxZ0hncOo5d5/3o/n
+9/ye5/m9h4KeMPmYVc83K8PuBLHmgQloSndueq2IgKpcSMQUEciuYKfb2DklByZi
+iFxcCCUXtijqCqcqY0uOa8UCJorwYM2lqE4dRVp4i0gURxlwo9imOLOwlqcpBhcB
+BYpkBZElBZYWsMwjiuNEHnDAxgMo0xTFY5mUGVanzFZd7se6EvOcmYqs34IkHsQn
+GPjEBDJhHp8//2ATIW+TGb0JDylGoEkIaIZmBYQAw9OUaABdWFuwVCDZscshG3Id
+WMu140xNVec9I7diICiWYWiRpkVKFyS5svUahsKIATQpAV5fANtICjIkomwsj2kJ
+CgggKEKJlTkbB0mJEjkO8QDLkAM0LyJSwFBkoQwpkkcCojEFAEA0g0kIWUHQSUiS
+lPV6DlOCLCIgchJLIdEGbEBCQLLpDlx4h1MlYmgG8BRVbJw1j4KwodtIbcGcQ0HZ
+ErbPe7Qg1aEX5mmqW0WqXX/NdrvzYgzj7sK8+ShOYZi5QJQJFaesz+3/gzX6PB4K
+A8QoAu/MUzScqRgIjgeCLp40+mCPzokkgZUxEoBE8RCKEiPJCMk0CShaT40CHAYA
+CvpUSMTxFKSBJNIyL3ECwHqiuqH/rDK6TilLp3QpWU7Jna9horjUZ7mvyexj8nvS
+x/i5psUBIf9+53e7gx+tf2Hq2lFX9PnkHptzDzt8d292UPzckvbDJTdfvbVl/UW+
+sa9rrm46qXrUP76UoY/f6/yoKbWvc2qD9+qGyF+vNXhzy2686f3u5Pc37Mvax+rK
+D9+rf3//UXKwF63pvzqzxXpqevJmOv9MR8WVS3zIzIGlphTrlfe66Zy4Jn9L9HAZ
+UdM15Ts8daGwzOesVf7pSMk6v/LW46+Hsb2tD1vCF1lLnq1tC68JmHgnQlx98WZ/
+w+f3Jza2rJ3d3dFWlZJ2RALJi6gfNltuFT+YlMYbooq++HSXtm56R2BaSm8rWrK2
+sthywVyw37v3l5Y7Y03a1t4fHRlFlTs/zvhze/D1yhMvL102au+afRjQ0D4TuHpk
+a+ysX85bq8qnnh7qiCxcc+nF6tBmT+vG0bm9kx2tH1gaRxaXJnpbMgi0e9TbnG7d
+c/rrfflTj2qtsa9U1bZW1+S7pVpvV6L998GejOqAmDP90alxnr7QZnNLf0Ly5eUs
+3NRyuaBgVVX9oaZPhrrrnH+/ne9cyVTlflZWcib8ds9vUv45c9JTgWW34lJOd2iN
+RczdtrwHaYODFbtMJzc7gp8PHBMm/ujcdr8/Ah7MjRh5brznBp37F3zpxHVrxbnx
++tsdA9y0PeTLAyNpwF89G+rbOJAwc35ie2ROE5rrCzz2bdjPScSxgW3BQx++kRpw
+zeer3b79GXGx+/4B
+=Myx4
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/walesmd
+
+==================================================================
