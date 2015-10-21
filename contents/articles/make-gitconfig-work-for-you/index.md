@@ -62,7 +62,7 @@ If you've put a lot of hard work into building out the perfect shell prompt, lik
 
 [color "branch"]
     current = yellow reverse
-    local = yello
+    local = yellow
     remote = green
 
 [color "diff"]
