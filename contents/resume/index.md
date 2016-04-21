@@ -13,7 +13,7 @@ template: resume.html
 
 ## Experience
 
-### Web Dev Curriculum Manager
+### Program Manager, Web Content
 #### Udacity (Apr 2014 - Present)
 
 * Responsible for the development of the curriculum for the Front-End, Senior Front-End and Full Stack Web Developer Nanodegree programs and all courses related to web development
