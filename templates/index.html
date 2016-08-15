@@ -8,7 +8,7 @@
         {% for article in articles %}
         <li class="article-list-item" itemprop="blogPost" itemscope itemtype="//schema.org/BlogPosting">
             <h1 class="post-title" itemprop="name"><a href="{{ article.url }}">{{ article.title }}</a></h1>
-            <time class="post-date" datetime="{{ moment(article.date).format('YYYY-MM-DD') }}" itemprop="datePublished">{{ moment(article.date).format('DD MMM') }}</time>
+            <time class="post-date" datetime="{{ moment(article.date).format('YYYY-MM-DD') }}" itemprop="datePublished">{{ moment(article.date).format('DD MMM YYYY') }}</time>
         </li>
         {% endfor %}
     </ol>

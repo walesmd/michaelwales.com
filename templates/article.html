@@ -4,7 +4,7 @@
 {% block content %}
 <article class="post" itemscope itemtype="//schema.org/BlogPosting">
     <h1 class="post-title" itemprop="name"><a href="{{ page.url }}">{{ page.title }}</a></h1>
-    <time class="post-date" datetime="{{ moment(page.date).format('YYYY-MM-DD') }}" itemprop="datePublished">{{ moment(page.date).format('DD MMM') }}</time>
+    <time class="post-date" datetime="{{ moment(page.date).format('YYYY-MM-DD') }}" itemprop="datePublished">{{ moment(page.date).format('DD MMM YYYY') }}</time>
 
     {{ page.html }}
 </article>
