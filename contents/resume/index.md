@@ -121,7 +121,6 @@ template: resume.html
 
 ## Education and Certifications
 
-* B.S. Information Technology - Software, Western Governor's University (2014 expected)
 * Microsoft Technology Associate (September 2013)
 * CIW JavaScript Specialist (May 2013)
 * CIW Web Foundations Associate (May 2013)
