@@ -5,26 +5,50 @@ template: resume.html
 
 ## Highlights
 
-* Self-taught Full-Stack Web Developer with over 16 years experience
-* Active Top Secret/SCI security clearance with counter-intelligence polygraph
-* 2014 Southwest Collegiate Cyber Defense Competition competitor
+* Self-taught Full-Stack Web Developer with over 18 years experience
+* Excels at leading large, diverse, teams in developing profitable products in ambiguous environments
+* Historic Top Secret/SCI security clearance with counter-intelligence polygraph
 * Open source software advocate, contributing to numerous projects include the PHP framework CodeIgniter, the Zsh shell framework Oh My Zsh, Adobe's Brackets code editor and the Boxee+ media server firmware
 
 
 ## Experience
 
 ### Director of Learning, Web Education Group
-#### Udacity (Apr 2014 - Present)
+#### Udacity (July 2016 - Present)
 
-* Responsible for the development of the curriculum for the Front-End, Senior Front-End and Full Stack Web Developer Nanodegree programs and all courses related to web development
+* Currently leading the largest Content Development organization within the company, consisting of 18+ employees (Project Managers, Course Developers, Curriculum Managers, Student Support, and Contractors) which develop and maintain 6 Nanodegree programs generating over $10 million in revenue per year
 
-* Coordinates with Course Developers on upcoming courses to ensure course content is relevant to the future of web development
+* Regularly reviews employee performance, job levels, and compensation ensuring an environment that promotes professional growth and development
 
-* Provides technical and pedagogical expertise to Course Developers and Subject Matter Experts during the course development process
+* Actively works with Business Development teams to identify, reach out, engage with, and maintain relationships with influential content development partners (Google, Facebook, AT&T, and many others)
 
-* Interacts with, encourages, and answers questions from over 2,000 active Nanodegree students through regularly scheduled office hours video chats, classroom forums, and chat rooms
+* Regularly presents to executives advising current product performance, growth opportunities, potential acquisitions
 
-* Writes content for the Udacity blog and Nanodegree newsletters reaching over one million students
+
+### Program Manager, Web Development Programs
+#### Udacity (Sept 2015 - July 2016)
+
+* Responsible for the development of the curriculum for the Front-End, Senior Web Developer and Full Stack Web Developer Nanodegree programs and all courses related to web development
+
+* Directly managed a team of 9 Content Developers, developing 4 Nanodegree programs generating over $6 million in revenue per year
+
+* Worked directly with content development partners (Google, AT&T, and GitHub) to develop profitable educational programs that not only met their outreach goals but led to over 600 direct placements in new careers
+
+* Tracked and reported progress on content development contracts, recognizing over $1.5 million in revenue
+
+
+### Content Developer and Curriculum Manager
+#### Udacity (Apr 2014 - Sept 2015)
+
+* Developed the first Nanodegree program (Front-End Web Developer), with over 3,000 students; served as the model for future Nanodegree programs and redefined the strategic vision for the company
+
+* Coordinated with Course Developers on upcoming courses to ensure course content is relevant to the future of web development
+
+* Provided technical and pedagogical expertise to Course Developers and Subject Matter Experts during the course development process
+
+* Interacted with, encouraged, and answered questions from over 3,400 active Nanodegree students through regularly scheduled office hours video chats, classroom forums, and chat rooms
+
+* Wrote content for the Udacity blog and Nanodegree newsletters reaching over one million students
 
 
 ### Lead Full Stack Web Developer
