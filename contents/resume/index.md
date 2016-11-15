@@ -51,7 +51,7 @@ template: resume.html
 * Wrote content for the Udacity blog and Nanodegree newsletters reaching over one million students
 
 
-### Lead Full Stack Web Developer
+### Lead Systems Architect
 #### Kforce Government Solutions (Oct 2010 - Apr 2014)
 
 * Lead a team of 6 remotely distributed developers through the SCRUM-based development cycle of government and commercial customer requested web-based applications
