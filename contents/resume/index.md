@@ -13,8 +13,21 @@ template: resume.html
 
 ## Experience
 
+### Director, Content Development
+#### Udacity (Jan 2017 - Present)
+
+* Direct manager of 20+ Engineers and Instructors developing content, projects, and curriculum for all of Udacity's Nanodegree programs. Hyper-focused on professional development and career growth; developing programs from the ground-up for a unique role that doesn't exist in most organizations.
+
+* Developed, executes upon, monitors, and measures the efficacy of all Content Development training programs utilized by full-time employees, contract workers, and content development partners. This program ensures all Content Developers on our platform are productive and efficient as quickly as possible and interfaces directly with our Product team to prioritize the future roadmap of features.
+
+* Coordinates cross-functionally with Executives, HR, Recruiting, and Financial departments to assess performance, review compensation/bonus packages, and plan staffing requirements for quarterly and annual projections.
+
+* Proactively works with Nanodegree Product Leads to assess their program's staffing needs, define their staffing requirements, recruit and interview candidates, and onboard/train new employees, contractors, and content development partners.
+
+* Researches and coordinates professional development programs, focused on developing the unique skill profile of the Content Developer profession and promoting team morale.
+
 ### Director of Learning, Web Education Group
-#### Udacity (July 2016 - Present)
+#### Udacity (Jul 2016 - Jan 2017)
 
 * Currently leading the largest Content Development organization within the company, consisting of 18+ employees (Project Managers, Course Developers, Curriculum Managers, Student Support, and Contractors) which develop and maintain 6 Nanodegree programs generating over $10 million in revenue per year
 
@@ -26,7 +39,7 @@ template: resume.html
 
 
 ### Program Manager, Web Development Programs
-#### Udacity (Sept 2015 - July 2016)
+#### Udacity (Sep 2015 - Jul 2016)
 
 * Responsible for the development of the curriculum for the Front-End, Senior Web Developer and Full Stack Web Developer Nanodegree programs and all courses related to web development
 
@@ -38,7 +51,7 @@ template: resume.html
 
 
 ### Content Developer and Curriculum Manager
-#### Udacity (Apr 2014 - Sept 2015)
+#### Udacity (Apr 2014 - Sep 2015)
 
 * Developed the first Nanodegree program (Front-End Web Developer), with over 3,000 students; served as the model for future Nanodegree programs and redefined the strategic vision for the company
 
