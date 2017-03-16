@@ -8,7 +8,7 @@ template: resume.html
 * Self-taught Full-Stack Web Developer with over 18 years experience
 * Excels at leading large, diverse, teams in developing profitable products in ambiguous environments
 * Historic Top Secret/SCI security clearance with counter-intelligence polygraph
-* Open source software advocate, contributing to numerous projects include the PHP framework CodeIgniter, the Zsh shell framework Oh My Zsh, Adobe's Brackets code editor and the Boxee+ media server firmware
+* Open source software advocate, contributing to numerous projects including the PHP framework CodeIgniter, the Zsh shell framework Oh My Zsh, Adobe's Brackets code editor and the Boxee+ media server firmware
 
 
 ## Experience
