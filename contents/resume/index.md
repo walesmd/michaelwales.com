@@ -16,7 +16,7 @@ template: resume.html
 ### Director, Content Development
 #### Udacity (Jan 2017 - Present)
 
-* Direct manager of 20+ Engineers and Instructors developing content, projects, and curriculum for all of Udacity's Nanodegree programs. Hyper-focused on professional development and career growth; developing programs from the ground-up for a unique role that doesn't exist in most organizations.
+* Direct manager of 40+ Engineers and Instructors developing content, projects, and curriculum for all of Udacity's Nanodegree programs. Hyper-focused on professional development and career growth; developing programs from the ground-up for a unique role that doesn't exist in most organizations.
 
 * Developed, executes upon, monitors, and measures the efficacy of all Content Development training programs utilized by full-time employees, contract workers, and content development partners. This program ensures all Content Developers on our platform are productive and efficient as quickly as possible and interfaces directly with our Product team to prioritize the future roadmap of features.
 
