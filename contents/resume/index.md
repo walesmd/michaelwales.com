@@ -29,7 +29,7 @@ template: resume.html
 ### Director of Learning, Web Education Group
 #### Udacity (Jul 2016 - Jan 2017)
 
-* Currently leading the largest Content Development organization within the company, consisting of 18+ employees (Project Managers, Course Developers, Curriculum Managers, Student Support, and Contractors) which develop and maintain 6 Nanodegree programs generating over $10 million in revenue per year
+* Lead the largest Content Development organization within the company, consisting of 18+ employees (Project Managers, Course Developers, Curriculum Managers, Student Support, and Contractors) which develop and maintain 6 Nanodegree programs generating over $10 million in revenue per year
 
 * Regularly reviews employee performance, job levels, and compensation ensuring an environment that promotes professional growth and development
 
