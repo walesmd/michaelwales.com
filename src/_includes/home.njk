@@ -1,0 +1,15 @@
+{% extends "base.njk" %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<article class="post">
+    <ol class="articles-list">
+        {% for article in collections.articles %}
+        <li class="article-list-item" itemprop="blogPost" itemscope itemtype="//schema.org/BlogPosting">
+            <h1 class="post-title" itemprop="name"><a href="{{ article.url }}">{{ article.data.title }}</a></h1>
+            <time class="post-date" datetime="{{ article.date | htmlDateString }}" itemprop="datePublished">{{ article.date | readableDate }}</time>
+        </li>
+        {% endfor %}
+    </ol>
+</article>
+{% endblock %}

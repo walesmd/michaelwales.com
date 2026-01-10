@@ -1,32 +1,18 @@
 {
   "name": "michaelwales.com",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "description": "The blog of Michael Wales, Full Stack Web Developer and Open Source Advocate.",
-  "main": "app/index.html",
-  "dependencies": {},
-  "devDependencies": {
-    "moment": "~2.5.1",
-    "underscore": "~1.6.0",
-    "wintersmith-nunjucks": "~0.4.1"
-  },
+  "private": true,
   "scripts": {
-    "test": "grunt test"
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "clean": "rm -rf _site"
   },
-  "repository": {
-    "type": "git",
-    "url": "gh:walesmd/walesmd.github.com"
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "luxon": "^3.4.0"
   },
-  "keywords": [
-    "Michael",
-    "Wales",
-    "Full",
-    "Stack",
-    "Web",
-    "Developer",
-    "Open",
-    "Source",
-    "Advocate"
-  ],
   "author": "Michael Wales",
   "license": "MIT"
 }
