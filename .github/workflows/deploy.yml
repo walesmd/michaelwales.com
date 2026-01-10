@@ -31,6 +31,6 @@ jobs:
         with:
           deploy_key: ${{ secrets.DEPLOY_KEY }}
           external_repository: walesmd/walesmd.github.io
-          publish_branch: main
+          publish_branch: master
           publish_dir: ./_site
           cname: michaelwales.com
