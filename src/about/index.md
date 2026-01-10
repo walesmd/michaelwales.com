@@ -4,21 +4,18 @@ layout: page.njk
 ---
 
 <div>
-    <p><img src="//gravatar.com/avatar/533b687cf97f813c620703e41c215fd7?s=200" class="align-right">I'm Michael Wales, a Full Stack Web Developer and Open Source Advocate. I live in San Antonio, TX, with my wife (Daniele), and our three children (Zach, Tiara and Aiden). I enjoy all things technology related, from programming and web design to car audio and hobby electronics. If I'm not busy working from our amazing offices at Udacity, you'll most likely find me playing paintball, video games or catching up on my favorite TV shows and movies.</p>
+    <p><img src="//gravatar.com/avatar/533b687cf97f813c620703e41c215fd7?s=200" class="align-right">I'm Michael Wales, an Engineering Leader passionate about learning and development. I live in San Antonio, TX, with my wife (Daniele), and our three children (Zach, Tiara and Aiden). I enjoy all things technology related, from programming and web design to car audio and hobby electronics.</p>
 
-    <p>I'm currently the Director of Content Development for [Udacity](http://udacity.com/) where we're helping people improve their lives through affordable, engaging and effective higher education. My specific focus, at this time, is on the technical, pedagogical, professional, and personal development of our amazing group of instructors across all of our Nanodegree programs. [My resume](/resume/) is available and details this work in addition to my work as a Department of Defense contractor and my enlistment in the U.S. Air Force.</p>
+    <p>I'm currently the Principal Manager of Engineering Learning and Development at [Skylight](https://skylight.digital/), where we use design and technology to help government agencies deliver better public services. My focus is on developing and mentoring engineers working on US Air Force programs. [My resume](/resume/) details my journey from the US Air Force through roles at Udacity, Moonrise, and Guideline.</p>
 
     <h2>Get in Touch</h2>
 
     <ul class="social-nav">
         <li class="social-nav-item">
-            <a href="http://twitter.com/walesmd" title="Twitter: @walesmd"><i class="ion-social-twitter"></i> Twitter</a>
+            <a href="https://github.com/walesmd" title="GitHub: walesmd"><i class="ion-social-github"></i> GitHub</a>
         </li>
         <li class="social-nav-item">
-            <a href="http://github.com/walesmd" title="GitHub: walesmd"><i class="ion-social-github"></i> GitHub</li></a>
-        </li>
-        <li class="social-nav-item">
-            <a href="http://www.linkedin.com/in/michaelwales" title="LinkedIn: Michael Wales"><i class="ion-social-linkedin"></i> LinkedIn</a>
+            <a href="https://www.linkedin.com/in/michaelwales" title="LinkedIn: Michael Wales"><i class="ion-social-linkedin"></i> LinkedIn</a>
         </li>
         <li class="social-nav-item">
             <a href="mailto:webmaster@michaelwales.com" title="Email: Michael Wales"><i class="ion-email"></i> Email</a>
