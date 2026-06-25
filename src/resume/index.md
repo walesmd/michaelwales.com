@@ -13,8 +13,13 @@ layout: resume.njk
 
 ## Experience
 
-### Principal Manager, Engineering Learning and Development - US Air Force
-#### Skylight (Jun 2024 - Present)
+### Senior Director, AI Programs
+#### CodePath (Apr 2026 - Present)
+
+CodePath is reprogramming higher education to create the first generation of AI-native engineers, CTOs, and founders. We deliver industry-vetted courses and career support centered on the needs of first-generation and low-income students.
+
+### Principal Engineering Manager, Technical Enablement - US Air Force
+#### Skylight (Jun 2024 - Apr 2026)
 
 Skylight is a digital consultancy using design and technology to help government agencies deliver better public services.
 
