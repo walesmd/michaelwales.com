@@ -1,0 +1,32 @@
+---
+# Generates one client-side redirect page per entry in src/_data/schedule.json.
+# GitHub Pages can't do real HTTP redirects, so each page uses meta-refresh +
+# a JS fallback to send visitors to the matching Google Calendar booking page.
+# Add a new short link by adding one line to src/_data/schedule.json.
+pagination:
+  data: schedule
+  size: 1
+  alias: slug
+permalink: "/schedule/{{ slug }}/index.html"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Redirecting…</title>
+  <link rel="canonical" href="{{ schedule[slug] }}">
+  <meta http-equiv="refresh" content="0; url={{ schedule[slug] }}">
+  <script>window.location.replace("{{ schedule[slug] | safe }}");</script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 4rem auto; max-width: 32rem; padding: 0 1rem; text-align: center; color: #333; }
+    a { color: #2b6cb0; }
+  </style>
+</head>
+<body>
+  <p>Redirecting you to my calendar…</p>
+  <p>If you aren't redirected automatically, <a href="{{ schedule[slug] }}">click here</a>.</p>
+</body>
+</html>
