@@ -1,6 +1,7 @@
 ---
 title: What Algorithm Runs an Elevator?
 date: 2026-06-26
+description: "A question caught me waiting for an elevator at Universal Orlando: how does it decide who to pick up? So I built a little world to run elevators myself and find out."
 ---
 
 I was standing in the lobby of my resort at Universal Orlando, waiting for an elevator, when the question caught me. Six cars, a small crowd, buttons lighting up faster than the doors could open. One car sailed past my floor without stopping. The other doubled back for someone who'd pressed *down* after I'd pressed *up*. And I found myself doing the thing I always do when something in the world won't leave me alone: wondering exactly how it decides. What's the logic in there? When two people on different floors both want a car, who wins? Is it just first-come-first-served, or is something cleverer going on?

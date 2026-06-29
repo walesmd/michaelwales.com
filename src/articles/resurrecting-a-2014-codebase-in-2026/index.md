@@ -1,6 +1,7 @@
 ---
 title: Resurrecting a 2014 Codebase in 2026
 date: 2026-01-10
+description: "Reviving a brittle, decade-old blog buried under technical debt—handing the whole repository to Claude Code and migrating from Wintersmith to a modern Eleventy build."
 ---
 
 For many developers, software projects never truly die - they just become harder and harder to touch. The code still exists; the ideas still matter; the content or functionality still has value. What disappears first is the ability to reasonably maintain that code. Over time, dependencies rot, build tools get abandoned, and the cognitive cost of even small changes steadily rises until the only sensible option seems to be "don’t touch it." That was the state of this blog - not broken in concept, but brittle and immobilized under a decade of technical debt.

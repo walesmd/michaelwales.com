@@ -1,6 +1,7 @@
 ---
 title: Resume
 layout: resume.njk
+description: "The career of Michael Wales—an engineering leader with 20+ years across CodePath, Skylight, Guideline, Moonrise, Udacity, and the US Air Force."
 ---
 
 ## Highlights

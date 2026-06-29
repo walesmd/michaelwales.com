@@ -1,9 +1,13 @@
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const { rssPlugin } = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
   // Syntax highlighting plugin (replaces highlight.js)
   eleventyConfig.addPlugin(syntaxHighlight);
+
+  // RSS/Atom feed filters (dateToRfc3339, getNewestCollectionItemDate, absoluteUrl, htmlToAbsoluteUrls)
+  eleventyConfig.addPlugin(rssPlugin);
 
   // Date formatting filters (replaces moment.js)
   eleventyConfig.addFilter("readableDate", (dateObj) => {
