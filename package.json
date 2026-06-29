@@ -1,7 +1,7 @@
 {
   "name": "michaelwales.com",
   "version": "2.0.0",
-  "description": "The blog of Michael Wales, Full Stack Web Developer and Open Source Advocate.",
+  "description": "The blog of Michael Wales, Engineering Leader and Open Source Advocate.",
   "private": true,
   "scripts": {
     "build": "eleventy",
