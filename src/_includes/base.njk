@@ -34,7 +34,9 @@
     <link rel="alternate" type="application/atom+xml" title="{{ site.title }} — Atom Feed" href="/feed.xml">
 
     <link rel="stylesheet" href="/styles/normalize.css">
+    {%- if "language-" in (content | string) %}
     <link rel="stylesheet" href="/styles/prism-github.css">
+    {%- endif %}
     <link rel="stylesheet" href="/styles/style.css">
 
     <script type="text/javascript" src="https://use.typekit.net/byn8skt.js"></script>
