@@ -71,7 +71,11 @@ meta description per-page (`{{ description or site.description }}`) and update
   the `title` attribute, which is unreliable on touch / screen readers.
 - **Fix:** add `aria-label="Resume"` / `aria-label="About"` to the anchors, or
   swap `display:none` for a screen-reader-only utility class.
-- [ ] Give the two nav links a reliable accessible name at all widths
+- [x] Give the two nav links a reliable accessible name at all widths
+
+> Done on branch `a11y-pass` (2026-06-29). Added `aria-label` to both nav anchors
+> (visible text matches → SC 2.5.3 clean) and `aria-hidden="true"` to the decorative
+> icon glyphs.
 
 ### 4. Cheap SEO infrastructure for a blog  `[low]` (do as one pass)
 - [x] `<link rel="canonical" href="{{ site.url }}{{ page.url }}">` in `base.njk`
@@ -94,11 +98,16 @@ meta description per-page (`{{ description or site.description }}`) and update
 > a separate tech-debt follow-up.
 
 ### 5. Quick accessibility fixes  `[low]`
-- [ ] `<html lang="en">` (`_includes/base.njk:2` — currently bare `<html>`)
-- [ ] `alt` on the 3 images: `about/index.md:7` (gravatar),
+- [x] `<html lang="en">` (`_includes/base.njk:2` — currently bare `<html>`)
+- [x] `alt` on the 3 images: `about/index.md:7` (gravatar),
       `getting-started-with-gulpjs/index.md:9,11` (Grunt/Gulp logos)
-- [ ] Darken post-date color — `styles/style.css:197` `#AAA` on white is
+- [x] Darken post-date color — `styles/style.css:197` `#AAA` on white is
       ~2.32:1, below the 4.5:1 AA minimum; use ≥`#767676`
+
+> Done on branch `a11y-pass` (2026-06-29). `<html lang="en">`; `alt="Michael Wales"`
+> on the gravatar and descriptive alt on both logos; `.post-date` → `#6E6E6E`
+> (measured 5.10:1 on white, passes AA). Adversarially verified (WCAG fixes,
+> contrast math, regressions) — 0 real defects.
 
 ---
 
@@ -123,8 +132,9 @@ meta description per-page (`{{ description or site.description }}`) and update
 - [ ] Add a `404.html` (GitHub Pages will serve it; currently the generic default).
 
 ### More accessibility
-- [ ] Decorative `<i>` icons lack `aria-hidden="true"` (`base.njk:32,35`,
-      `about/index.md:15,18,21`)
+- [x] Decorative `<i>` icons lack `aria-hidden="true"` (`base.njk:32,35`,
+      `about/index.md:15,18,21`) — done in the `a11y-pass` branch (2026-06-29)
+      alongside Tier 1 Task 3.
 - [ ] Heading hierarchy: homepage emits the sidebar `<h1>` plus one `<h1>` per
       article (`home.njk:9`); demote article-list titles to `<h2>`. The
       `header-subtitle` `<h2>` is also `display:none` (`base.njk:26` /
