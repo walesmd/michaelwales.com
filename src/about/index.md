@@ -1,6 +1,7 @@
 ---
 title: About Me
 layout: page.njk
+description: "Michael Wales—engineering leader, Senior Director of AI Programs at CodePath, and open source advocate based in San Antonio, TX. A bit about me and how to get in touch."
 ---
 
 <div>

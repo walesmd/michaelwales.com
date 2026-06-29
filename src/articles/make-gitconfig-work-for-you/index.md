@@ -1,6 +1,7 @@
 ---
 title: Make .gitconfig Work for You
 date: 2014-03-19
+description: "Git's real power lives on the command line. A tour of the .gitconfig file—its scopes, aliases, and settings—to make Git work the way you do."
 ---
 
 [Git](http://git-scm.com) has undoubtedly become one of the most important tools within any Web Developer's bag of tricks, arguably due to amazing success of [GitHub](http://github.com). Unfortunately, Git can be quite overwhelming - particularly for those developers new to *distributed* version control systems.

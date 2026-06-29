@@ -1,5 +1,9 @@
 {
   "title": "Michael Wales",
-  "description": "Engineering Leader and Open Source Advocate",
-  "url": "https://michaelwales.com"
+  "tagline": "Engineering Leader and Open Source Advocate",
+  "description": "Engineering leader with 20+ years building teams and products, now Senior Director of AI Programs at CodePath—writing on leadership, learning, and technology.",
+  "url": "https://michaelwales.com",
+  "author": "Michael Wales",
+  "image": "https://gravatar.com/avatar/533b687cf97f813c620703e41c215fd7?s=600",
+  "twitter": "walesmd"
 }

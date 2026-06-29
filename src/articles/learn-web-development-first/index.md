@@ -1,6 +1,7 @@
 ---
 title: Learn Web Development, First
 date: 2014-02-20
+description: "Frameworks and languages come and go; HTML, CSS, and JavaScript are the constant. A case for learning the fundamentals of the web before committing to any single stack."
 ---
 
 I recently read Rob Conery's *[PHP or ASP.NET: Did I Do The Right Thing?](http://www.wekeroad.com/2014/02/18/i-had-a-choice-php-or-net/)* Although it does a great job uncovering how a developer can literally lose half a decade of their life by focusing their efforts towards the wrong technologies, I can't help but feel as if Rob is still asking himself the wrong questions, focusing on symptoms rather than the problem itself.
