@@ -74,14 +74,24 @@ meta description per-page (`{{ description or site.description }}`) and update
 - [ ] Give the two nav links a reliable accessible name at all widths
 
 ### 4. Cheap SEO infrastructure for a blog  `[low]` (do as one pass)
-- [ ] `<link rel="canonical" href="{{ site.url }}{{ page.url }}">` in `base.njk`
+- [x] `<link rel="canonical" href="{{ site.url }}{{ page.url }}">` in `base.njk`
       (`site.url` is defined in `site.json:4` but currently unused)
-- [ ] Open Graph + Twitter Card tags in `base.njk` (currently none → bare,
+- [x] Open Graph + Twitter Card tags in `base.njk` (currently none → bare,
       image-less link previews)
-- [ ] RSS/Atom feed — add `@11ty/eleventy-plugin-rss` + a `feed.njk`, link via
+- [x] RSS/Atom feed — add `@11ty/eleventy-plugin-rss` + a `feed.njk`, link via
       `<link rel="alternate">`
-- [ ] `sitemap.xml` template iterating the collections
-- [ ] Per-page meta descriptions (today all pages share the one global string)
+- [x] `sitemap.xml` template iterating the collections
+- [x] Per-page meta descriptions (today all pages share the one global string)
+
+> Done on branch `seo-sharing` (2026-06-29). Per-page descriptions (6 articles +
+> about + resume) with `{{ description or site.description }}` fallback; canonical,
+> Open Graph (incl. `og:image:alt` + `article:published_time`), and Twitter
+> `summary` cards (@walesmd) in `base.njk`; Atom feed at `/feed.xml`; `/sitemap.xml`
+> (excludes the `noindex` `/schedule` stubs). Adversarially verified across Atom,
+> OG/Twitter, sitemap, and regression specs — 0 real defects.
+> Note: installing the RSS plugin surfaced pre-existing dev-only `npm audit`
+> findings in Eleventy's transitive deps (not shipped to the static site); left as
+> a separate tech-debt follow-up.
 
 ### 5. Quick accessibility fixes  `[low]`
 - [ ] `<html lang="en">` (`_includes/base.njk:2` — currently bare `<html>`)
