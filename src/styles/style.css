@@ -59,6 +59,15 @@ img {
     margin: 0 auto;
 }
 
+/* Inline SVG icons (replaces the ionicons font) */
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    vertical-align: -0.125em;
+}
+
 label {
     display: none;
 }
@@ -211,7 +220,7 @@ blockquote {
     margin-right: 0.5em;
 }
 
-.social-nav-item i {
+.social-nav-item .icon {
     margin-right: 0.35em;
 }
 
@@ -296,11 +305,11 @@ blockquote {
         display: block;
     }
 
-    .nav-item i {
-        display: inline-block;
+    .nav-item .icon {
         width: 20px;
-        text-align: center;
+        height: 20px;
         margin-right: .35em;
+        vertical-align: middle;
     }
 
     .nav-item a {
