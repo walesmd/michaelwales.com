@@ -13,13 +13,13 @@ description: "Michael Wales—engineering leader, Senior Director of AI Programs
 
     <ul class="social-nav">
         <li class="social-nav-item">
-            <a href="https://github.com/walesmd" title="GitHub: walesmd"><i class="ion-social-github" aria-hidden="true"></i> GitHub</a>
+            <a href="https://github.com/walesmd" title="GitHub: walesmd">{% icon "github" %} GitHub</a>
         </li>
         <li class="social-nav-item">
-            <a href="https://www.linkedin.com/in/michaelwales" title="LinkedIn: Michael Wales"><i class="ion-social-linkedin" aria-hidden="true"></i> LinkedIn</a>
+            <a href="https://www.linkedin.com/in/michaelwales" title="LinkedIn: Michael Wales">{% icon "linkedin" %} LinkedIn</a>
         </li>
         <li class="social-nav-item">
-            <a href="mailto:webmaster@michaelwales.com" title="Email: Michael Wales"><i class="ion-email" aria-hidden="true"></i> Email</a>
+            <a href="mailto:webmaster@michaelwales.com" title="Email: Michael Wales">{% icon "envelope" %} Email</a>
         </li>
     </ul>
 </div>
