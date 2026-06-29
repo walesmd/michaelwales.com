@@ -62,7 +62,14 @@ meta description per-page (`{{ description or site.description }}`) and update
   not exist** — silent no-op (confirmed: build reports "Copied 11", nothing
   shipped). There is also no `<link rel="icon">` in `base.njk`.
 - **Impact:** every visitor's browser 404s on `/favicon.ico`.
-- [ ] Add a real `src/favicon.ico` (and/or SVG) + `<link rel="icon">` in `base.njk`
+- [x] Add a real `src/favicon.ico` (and/or SVG) + `<link rel="icon">` in `base.njk`
+
+> Done on branch `favicon` (2026-06-29). Authored `favicon.svg` (MW monogram,
+> font-independent vector strokes, green `#B9CC72` on dark `#252D38`); generated a
+> multi-size `favicon.ico` (16/32/48) and a 180×180 `apple-touch-icon.png` (no
+> alpha) from it; passthrough-copied all three; added the modern 3-tag `<link>`
+> set to `base.njk`. The `/favicon.ico` 404 is resolved. Adversarially verified —
+> 0 defects. **This completes Tier 1.**
 
 ### 3. Mobile nav is icon-only with no accessible name  `[medium]`
 - `_includes/base.njk:32,35` + `styles/style.css:132` (re-shown only ≥780px at
