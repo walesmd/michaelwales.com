@@ -121,17 +121,36 @@ meta description per-page (`{{ description or site.description }}`) and update
 ## Tier 2 — Nice-to-have polish
 
 ### Performance / assets
-- [ ] **Typekit dependency** (`base.njk:16`): render-blocking synchronous script;
-      all fonts (`Athelas`, `Nimbus-Sans-Condensed`, `Source-Code-Pro`) live only
-      in that kit (live today, but a single point of failure). Move to async
+- [ ] **Typekit dependency** (`base.njk` Typekit embed): render-blocking synchronous
+      script; all fonts (`Athelas`, `Nimbus-Sans-Condensed`, `Source-Code-Pro`) live
+      only in that kit (live today, but a single point of failure). Move to async
       embed or self-host with `font-display: swap`.
+
+  > **Deferred (2026-06-29).** Decision: leave as-is for now. It works today, and
+  > the lowest-effort fix (Typekit JS→CSS embed + `font-display: optional` in the
+  > kit settings) needs access to the Adobe Fonts account for kit `byn8skt`, which
+  > we don't currently have. Not worth the effort/risk while the kit serves fine.
+  > If revisited: of the 3 faces, **Source Code Pro** is OFL (freely self-hostable),
+  > **Athelas** is an Apple system font (already local on macOS/iOS), and only
+  > **Nimbus-Sans-Condensed** is a genuine Typekit dependency. The highest-leverage
+  > polish (regardless of host) is metric-matched fallbacks to make any fallback
+  > moment imperceptible.
 - [x] **Concrete font bug:** `styles/style.css:91` declares
       `font-family: 'Source-Code-Pro'` with **no generic fallback** — add
       `, monospace`.
-- [ ] **ionicons bloat:** ~515 KB of font files across 4 formats (incl. IE-only
+- [x] **ionicons bloat:** ~515 KB of font files across 4 formats (incl. IE-only
       `.eot`) + a ~700-selector stylesheet to render **5 glyphs**
       (`styles/ionicons.min.css`, `fonts/ionicons.*`, linked at `base.njk:12`).
       Replace with 5 inline SVGs, or at minimum drop `.eot`/`.svg`.
+
+  > Done on branch `tier2-ionicons` (2026-06-29). Replaced the font with 5 inline
+  > SVGs via an `{% icon %}` shortcode (paths inlined in `eleventy.config.js`):
+  > GitHub (Simple Icons, official), LinkedIn (Bootstrap Icons), document-text /
+  > information-circle / envelope (Heroicons solid). Deleted ~515 KB of fonts +
+  > the 34 KB stylesheet (4 stylesheets → 3); `.icon` uses `fill: currentColor`.
+  > Temp packages used only to extract paths, then removed — no new deps.
+  > Visually verified via headless Chrome (desktop + mobile vs master) and
+  > adversarially verified (completeness, correctness, a11y, regressions) — 0 defects.
 - [x] **CLS:** article images set `width` but no `height`
       (`getting-started-with-gulpjs/index.md:9,11`).
 - [ ] 4 separate unminified/unbundled/non-cache-busted stylesheets in `<head>`
@@ -155,6 +174,13 @@ meta description per-page (`{{ description or site.description }}`) and update
 > `<h1>`→`<h2>` with a `.post-title` font-size rule so rendered size is unchanged;
 > dropped the self-referential `<a>` on single-page titles. Adversarially verified
 > (heading/visual-preservation, CSS/CLS/404, regressions) — 0 real defects.
+
+- [ ] **Mobile nav doesn't surface in the header band at narrow widths** (observed
+      while doing the ionicons work, 2026-06-29). The 2014 float-based nav
+      (`.nav { float: right; margin-top: -2.15em }`, `style.css`) doesn't show the
+      icon-only Resume/About links in the dark header band on narrow screens.
+      **Pre-existing** — confirmed identical on `master` before the icon swap, so
+      not a regression. Worth revisiting as its own small layout fix.
 > Remaining Tier 2: Typekit dependency, ionicons slim-down, stylesheet
 > bundling/minification (the three judgment-heavy refactors).
 > The `header-subtitle` h2 was left as-is — `display:none` removes it from the
