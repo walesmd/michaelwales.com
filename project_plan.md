@@ -125,29 +125,40 @@ meta description per-page (`{{ description or site.description }}`) and update
       all fonts (`Athelas`, `Nimbus-Sans-Condensed`, `Source-Code-Pro`) live only
       in that kit (live today, but a single point of failure). Move to async
       embed or self-host with `font-display: swap`.
-- [ ] **Concrete font bug:** `styles/style.css:91` declares
+- [x] **Concrete font bug:** `styles/style.css:91` declares
       `font-family: 'Source-Code-Pro'` with **no generic fallback** — add
       `, monospace`.
 - [ ] **ionicons bloat:** ~515 KB of font files across 4 formats (incl. IE-only
       `.eot`) + a ~700-selector stylesheet to render **5 glyphs**
       (`styles/ionicons.min.css`, `fonts/ionicons.*`, linked at `base.njk:12`).
       Replace with 5 inline SVGs, or at minimum drop `.eot`/`.svg`.
-- [ ] **CLS:** article images set `width` but no `height`
+- [x] **CLS:** article images set `width` but no `height`
       (`getting-started-with-gulpjs/index.md:9,11`).
 - [ ] 4 separate unminified/unbundled/non-cache-busted stylesheets in `<head>`
       (`base.njk:11-14`).
-- [ ] Add a `404.html` (GitHub Pages will serve it; currently the generic default).
+- [x] Add a `404.html` (GitHub Pages will serve it; currently the generic default).
 
 ### More accessibility
 - [x] Decorative `<i>` icons lack `aria-hidden="true"` (`base.njk:32,35`,
       `about/index.md:15,18,21`) — done in the `a11y-pass` branch (2026-06-29)
       alongside Tier 1 Task 3.
-- [ ] Heading hierarchy: homepage emits the sidebar `<h1>` plus one `<h1>` per
+- [x] Heading hierarchy: homepage emits the sidebar `<h1>` plus one `<h1>` per
       article (`home.njk:9`); demote article-list titles to `<h2>`. The
       `header-subtitle` `<h2>` is also `display:none` (`base.njk:26` /
       `style.css:148`).
-- [ ] Post titles self-link to their own URL on single views
+- [x] Post titles self-link to their own URL on single views
       (`article.njk:6`, `page.njk:6`) — render as plain heading text there.
+
+> Done on branch `tier2-quick-wins` (2026-06-29). Bundled: code `monospace`
+> fallback; `/404.html` (full chrome, excluded from sitemap/feed); logo `height`
+> attrs (aspect-correct) + `img { height: auto }` for CLS; homepage titles
+> `<h1>`→`<h2>` with a `.post-title` font-size rule so rendered size is unchanged;
+> dropped the self-referential `<a>` on single-page titles. Adversarially verified
+> (heading/visual-preservation, CSS/CLS/404, regressions) — 0 real defects.
+> Remaining Tier 2: Typekit dependency, ionicons slim-down, stylesheet
+> bundling/minification (the three judgment-heavy refactors).
+> The `header-subtitle` h2 was left as-is — `display:none` removes it from the
+> a11y tree entirely, so it's not a real outline problem.
 
 ---
 

@@ -55,6 +55,7 @@ p {
 img {
     display: block;
     max-width: 100%;
+    height: auto;
     margin: 0 auto;
 }
 
@@ -88,7 +89,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: 'Source-Code-Pro';
+    font-family: 'Source-Code-Pro', monospace;
     font-size: .8em;
 }
 
@@ -181,6 +182,7 @@ blockquote {
 
 .post-title {
     display: inline-block;
+    font-size: 1.6em;
 }
 
 .post-title a {
@@ -242,6 +244,10 @@ blockquote {
 
     h4 {
         font-size: 1.2em;
+    }
+
+    .post-title {
+        font-size: 2em;
     }
 
     img {
