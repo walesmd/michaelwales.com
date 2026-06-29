@@ -30,6 +30,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/CNAME");
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
+  eleventyConfig.addPassthroughCopy("src/favicon.svg");
+  eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
 
   // Copy article images (co-located with posts)
   eleventyConfig.addPassthroughCopy("src/articles/**/*.{png,jpg,jpeg,gif,svg,webp}");
