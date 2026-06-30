@@ -121,20 +121,23 @@ meta description per-page (`{{ description or site.description }}`) and update
 ## Tier 2 — Nice-to-have polish
 
 ### Performance / assets
-- [ ] **Typekit dependency** (`base.njk` Typekit embed): render-blocking synchronous
-      script; all fonts (`Athelas`, `Nimbus-Sans-Condensed`, `Source-Code-Pro`) live
-      only in that kit (live today, but a single point of failure). Move to async
-      embed or self-host with `font-display: swap`.
+- [x] **Typekit dependency** (`base.njk` Typekit embed): was a render-blocking
+      synchronous JS embed (`byn8skt.js` + `Typekit.load()`) that also hid text via
+      the `wf-loading` mechanism (FOIT). Move to async embed + set `font-display`.
 
-  > **Deferred (2026-06-29).** Decision: leave as-is for now. It works today, and
-  > the lowest-effort fix (Typekit JS→CSS embed + `font-display: optional` in the
-  > kit settings) needs access to the Adobe Fonts account for kit `byn8skt`, which
-  > we don't currently have. Not worth the effort/risk while the kit serves fine.
-  > If revisited: of the 3 faces, **Source Code Pro** is OFL (freely self-hostable),
-  > **Athelas** is an Apple system font (already local on macOS/iOS), and only
-  > **Nimbus-Sans-Condensed** is a genuine Typekit dependency. The highest-leverage
-  > polish (regardless of host) is metric-matched fallbacks to make any fallback
-  > moment imperceptible.
+  > **Done on branch `typekit-css-embed` (2026-06-30).** Account access was the
+  > blocker; confirmed ownership of kit `byn8skt` (project "MichaelWales.com",
+  > 3 families / 7 faces, domain michaelwales.com). Swapped the JS embed for the
+  > async **CSS embed** (`<link rel="stylesheet" href="https://use.typekit.net/byn8skt.css">`)
+  > and added `<link rel="preconnect" href="https://use.typekit.net" crossorigin>`.
+  > Removes the render-blocking JS and the JS-driven FOIT. **font-display set to
+  > `optional`** in the kit's Edit Project screen (was `auto`) — no flash-of-invisible
+  > and no swap; cold/uncached visitors may see fallback fonts for that pageview.
+  > Fonts still resolve: kit CSS defines `athelas`/`nimbus-sans-condensed`/`source-code-pro`,
+  > which match our (case-insensitive) `font-family` references.
+  > Still NOT self-hosted (kept Adobe-hosted) — that remains a future option if the
+  > third-party dependency ever needs eliminating (Source Code Pro is OFL; Athelas
+  > is an Apple system font; only Nimbus-Sans-Condensed is a true Typekit lock-in).
 - [x] **Concrete font bug:** `styles/style.css:91` declares
       `font-family: 'Source-Code-Pro'` with **no generic fallback** — add
       `, monospace`.

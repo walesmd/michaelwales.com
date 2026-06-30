@@ -7,6 +7,8 @@
     <meta name="author" content="{{ site.author }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+
     {%- if eleventy.env.runMode == "build" and site.clarity %}
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
@@ -44,14 +46,12 @@
 
     <link rel="alternate" type="application/atom+xml" title="{{ site.title }} — Atom Feed" href="/feed.xml">
 
+    <link rel="stylesheet" href="https://use.typekit.net/byn8skt.css">
     <link rel="stylesheet" href="/styles/normalize.css">
     {%- if "language-" in (content | string) %}
     <link rel="stylesheet" href="/styles/prism-github.css">
     {%- endif %}
     <link rel="stylesheet" href="/styles/style.css">
-
-    <script type="text/javascript" src="https://use.typekit.net/byn8skt.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 
 <body class="page" itemscope itemtype="//schema.org/Blog">
