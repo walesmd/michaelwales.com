@@ -308,3 +308,74 @@ meta description per-page (`{{ description or site.description }}`) and update
 - **No `robots.txt`** — not needed for a fully-indexable small site.
 - **`package.json` description staleness** — text exists but low value; folded
   into the identity-drift item above.
+
+---
+
+# Design System Adoption
+
+A **separate initiative** from the Tier 1–3 cleanup above: rolling out the
+`michael-wales-design` skill's system onto the live site. Same working
+agreement — **one PR per row**, off a fresh branch from `master`, build +
+eyeball + commit after each, and never combine a "no visual change" refactor
+with a visual change.
+
+Source of truth lives in `.claude/skills/michael-wales-design/` (`SKILL.md`,
+`MIGRATION.md`, its own `PROJECT_PLAN.md`, `tokens/`, `components.css`,
+`nunjucks/components.njk`, `static-reference.html`).
+
+## Review findings that shaped this plan
+
+1. **Palette already lines up.** The skill's `tokens/colors.css` base vars
+   (`--color-dark`, `--color-green`, `--color-slate`, …) match our current
+   `:root` exactly — same names, hexes, even comments. Tokenizing is genuinely
+   low-risk find-and-replace, as the skill's own plan claims.
+2. **Do NOT adopt `tokens/fonts.css`.** It loads Typekit via a render-blocking
+   `@import url("https://p.typekit.net/p.css…")`. We just moved off
+   render-blocking Typekit to an async CSS embed + preconnect — adopting it
+   would silently undo that. Keep our async embed; pull in only the non-font
+   tokens.
+3. **Bundle tokens at build time, not via runtime `@import`.** The skill's
+   `styles.css` is a 9-deep runtime `@import` chain; runtime `@import`s
+   serialize and block render. Concatenate the token files into the CSS through
+   the Eleventy pipeline instead. (Build-side fix, decided against Lighthouse
+   data.)
+4. **Phase 0/1 partly overlaps Tier 3.** We already extracted the palette to
+   `:root` and narrowed `transition: all`, so "tokenize" here is really "delete
+   our 8 duplicated `:root` vars now that `tokens/colors.css` supplies them" —
+   identical values, so a safe no-op swap.
+
+## Sequence
+
+PRs A–E are the migration (looks identical, better foundation). F onward is the
+new capability — each needs a real visual/design review, not just a build check.
+
+- [ ] **A — Install tokens (invisible).** Bring in `tokens/` (minus `fonts.css`)
+      + `components.css`. Wire into the build by **concatenating**, not runtime
+      `@import`. Build output byte-identical.
+- [ ] **B — Tokenize / dedup (invisible, safety checkpoint).** Delete the 8
+      now-duplicated `:root` vars from `style.css`; point everything at the token
+      vars. Visual diff must be zero.
+- [ ] **C — `base.njk` onto components (invisible-ish).** Sidebar/nav →
+      `.mw-sidebar` / `.mw-nav` / `.mw-nav-item`; set `is-active` from
+      `page.url`. Delete dead bespoke CSS as it's replaced.
+- [ ] **D — Pages onto components (invisible-ish).** `home.njk`, `article.njk`,
+      About/Resume → `.mw-*` classes (or the `components.njk` macros). Social
+      links → `.mw-social`, content → `.mw-prose`.
+- [ ] **E — Navy code theme (first intentional visual change).** Swap
+      `prism-github.css` → `assets/prism-navy.css` in `base.njk`. Verify on an
+      article with code (e.g. the Gulp post).
+- [ ] **F — Topics / tagging (feature).** Add `topic` front-matter field;
+      backfill posts; topic chips (`.mw-tag`) + article-count row on `home.njk`.
+      Optional `/topics/<topic>/` archive pages.
+- [ ] **G — Projects shell (feature).** `Projects` nav item + `/projects/` index
+      from `examples/projects-index.html` (driven by a `projects` data file);
+      `project-cover.njk` per experience (start with `codepath-sim`); wire the
+      `return-chip.js` `<mw-return>` into each experience repo.
+- [ ] **H — Polish (feature).** Confirm Typekit loads in prod; replace stand-in
+      Projects content with real entries; accessibility pass (focus-visible,
+      contrast on navy surfaces, `prefers-reduced-motion`).
+
+## Definition of done per PR
+
+Builds clean, deploys, looks right on mobile + desktop, and (A–E) is
+pixel-identical to before. Keep diffs small; keep `SKILL.md` brand rules in view.
