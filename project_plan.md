@@ -131,10 +131,17 @@ meta description per-page (`{{ description or site.description }}`) and update
   > async **CSS embed** (`<link rel="stylesheet" href="https://use.typekit.net/byn8skt.css">`)
   > and added `<link rel="preconnect" href="https://use.typekit.net" crossorigin>`.
   > Removes the render-blocking JS and the JS-driven FOIT. **font-display set to
-  > `optional`** in the kit's Edit Project screen (was `auto`) — no flash-of-invisible
-  > and no swap; cold/uncached visitors may see fallback fonts for that pageview.
+  > `block`** in the kit's Edit Project screen (was `auto`).
   > Fonts still resolve: kit CSS defines `athelas`/`nimbus-sans-condensed`/`source-code-pro`,
   > which match our (case-insensitive) `font-family` references.
+  >
+  > _Note on the `font-display` choice:_ we first set `optional` (no flash of any
+  > kind), but it dropped the **condensed** headings to the generic `sans-serif`
+  > fallback on cold loads — visually jarring because the stack has no condensed
+  > fallback, and it never swaps in the real font. Switched to **`block`**, which
+  > reproduces the old JS-embed behavior the design expects: headings are briefly
+  > invisible, then render in Nimbus — the wide fallback is never shown. The brief
+  > FOIT is kept short by the `preconnect` + small woff2 + caching.
   > Still NOT self-hosted (kept Adobe-hosted) — that remains a future option if the
   > third-party dependency ever needs eliminating (Source Code Pro is OFL; Athelas
   > is an Apple system font; only Nimbus-Sans-Condensed is a true Typekit lock-in).
