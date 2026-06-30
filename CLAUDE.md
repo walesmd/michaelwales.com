@@ -24,7 +24,7 @@ npm run clean
 
 ## Deployment
 
-Deployment is automated via GitHub Actions. Pushing to `main` triggers:
+Deployment is automated via GitHub Actions. Pushing to `master` triggers:
 1. Build with Eleventy
 2. Deploy to walesmd/walesmd.github.io repository
 
@@ -43,7 +43,7 @@ src/
 ├── about/           # About page
 ├── resume/          # Resume page
 ├── styles/          # CSS files
-├── fonts/           # Icon fonts (ionicons)
+├── schedule.njk     # /schedule redirect-page generator
 └── index.md         # Homepage
 ```
 
@@ -53,14 +53,14 @@ src/
 - Frontmatter uses ISO date format: `date: 2014-02-12`
 
 **Templates** (`src/_includes/`):
-- `base.njk` - Base layout with header, nav, footer
+- `base.njk` - Base layout with header and nav
 - `article.njk`, `page.njk`, `home.njk`, `resume.njk` - Extend base.njk
 
 **Configuration** (`eleventy.config.js`):
 - Date filters: `readableDate`, `htmlDateString` (using Luxon)
 - Syntax highlighting via `@11ty/eleventy-plugin-syntaxhighlight`
 - Articles collection sorted by date descending
-- Passthrough copy for styles, fonts, images
+- Passthrough copy for styles and static assets (favicon, CNAME, co-located article images)
 
 ## Adding New Articles
 
@@ -78,3 +78,18 @@ Images can be placed alongside `index.md` and referenced with relative paths:
 ```markdown
 ![Alt text](image.png)
 ```
+
+## /schedule Redirect Engine
+
+Short, memorable redirect links (e.g. `/schedule/30/`) that forward to external
+booking pages. GitHub Pages can't issue real HTTP redirects, so each link is a
+generated client-side redirect page.
+
+- **Data** — `src/_data/schedule.json` maps a short code to a destination URL
+  (e.g. `"30"` → a Google Calendar appointment page).
+- **Template** — `src/schedule.njk` uses Eleventy pagination (`size: 1`) to emit
+  one page per entry at `/schedule/{code}/index.html`. Each page is `noindex`, sets
+  `rel="canonical"` to the destination, and redirects via `<meta http-equiv="refresh">`
+  plus a `window.location.replace()` JS fallback. The pages are excluded from
+  collections, the sitemap, and the feed.
+- **Add a link** — add one line to `src/_data/schedule.json`; no template changes needed.
