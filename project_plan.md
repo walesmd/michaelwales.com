@@ -253,28 +253,50 @@ meta description per-page (`{{ description or site.description }}`) and update
 >   clean (14 files); no bare hex left outside `:root`. Same computed CSS ⇒
 >   identical render.
 
-- [ ] `transition: all` watches every animatable property (`style.css:33,36,52,165`)
+- [x] `transition: all` watches every animatable property (`style.css:33,36,52,165`)
 - [ ] `normalize.css` pinned at v2.1.3 (2013), ~13 years stale (`normalize.css:1`)
-- [ ] Dead form/`label` selectors that never appear in the site
+- [x] Dead form/`label` selectors that never appear in the site
       (`style.css:61-63, 65-74`)
 
 ### Build / config
-- [ ] `eleventy.config.js:26` `addPassthroughCopy("src/images")` targets a
+- [x] `eleventy.config.js:26` `addPassthroughCopy("src/images")` targets a
       non-existent dir (silent no-op)
-- [ ] `.jshintrc` is dead config — no JS to lint, no lint script/dependency
-- [ ] **`CLAUDE.md:27` says deploy triggers on `main`, but it's `master`**
+- [x] `.jshintrc` is dead config — no JS to lint, no lint script/dependency
+- [x] **`CLAUDE.md:27` says deploy triggers on `main`, but it's `master`**
       (`.github/workflows/deploy.yml:4-6`) — doc drift
-- [ ] Document the `/schedule` redirect engine in `CLAUDE.md` / `README`
+- [x] Document the `/schedule` redirect engine in `CLAUDE.md` / `README`
 
 ### Templates
-- [ ] Obsolete `X-UA-Compatible IE=edge` meta (`base.njk:5`)
-- [ ] Empty `<footer>` renders nothing (`base.njk:46-48`)
-- [ ] Protocol-relative `//schema.org/...` itemtypes (`base.njk:20,22`,
+- [x] Obsolete `X-UA-Compatible IE=edge` meta (`base.njk:5`)
+- [x] Empty `<footer>` renders nothing (`base.njk:46-48`)
+- [x] Protocol-relative `//schema.org/...` itemtypes (`base.njk:20,22`,
       `article.njk:5`, `home.njk:8`) → use `https://schema.org/...`
-- [ ] Title template yields a leading `" - Michael Wales"` if a title block is
+- [x] Title template yields a leading `" - Michael Wales"` if a title block is
       ever empty (`base.njk:6`) — make the separator conditional, source name
       from `site.title`
 - [ ] 5 near-identical layout includes could collapse to 1–2
+
+> Done on branch `tier3-quick-wins` (2026-06-30). Bundled the XS/no-risk Tier 3
+> items into one pass:
+> - **CSS:** narrowed `transition: all` to interactive (hover) properties only —
+>   `.nav-item a` → `color, background-color`; removed the inert transitions on
+>   h1–h4/p/.post (no hover/JS ever triggered them, only incidental breakpoint
+>   resize animation). Deleted the dead `label`/`button`/`input` selectors (the
+>   site has no form elements anywhere).
+> - **Build/config:** removed the no-op `src/images` passthrough and the dead
+>   `.jshintrc`; fixed the `main`→`master` deploy doc in `CLAUDE.md`.
+> - **Templates:** dropped `X-UA-Compatible`; made `<title>` conditional and
+>   sourced the site name from `site.title` (output byte-identical for all current
+>   pages — every page has a `title`, so this is defensive); removed the empty
+>   `<footer>`; switched all 4 `//schema.org` itemtypes to `https://`.
+> - **Docs:** added a `/schedule` redirect-engine section to `CLAUDE.md` (plus
+>   corrected stale `fonts`/`images`/`footer` references in the same file).
+> - **Deferred to their own PRs:** `normalize.css` upgrade (above) and the
+>   5-includes consolidation (below) — both need independent review/validation.
+> - Verified: build clean; HTML `<title>` byte-identical to master; 0 protocol-
+>   relative `//schema.org`, `X-UA-Compatible`, `<footer>`, or `transition: all`
+>   in the build. Adversarially verified across 3 lenses (template logic, CSS
+>   behavior, completeness/regression) — **0 defects**.
 
 ---
 
