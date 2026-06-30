@@ -207,12 +207,16 @@ meta description per-page (`{{ description or site.description }}`) and update
 > dropped the self-referential `<a>` on single-page titles. Adversarially verified
 > (heading/visual-preservation, CSS/CLS/404, regressions) — 0 real defects.
 
-- [ ] **Mobile nav doesn't surface in the header band at narrow widths** (observed
-      while doing the ionicons work, 2026-06-29). The 2014 float-based nav
-      (`.nav { float: right; margin-top: -2.15em }`, `style.css`) doesn't show the
-      icon-only Resume/About links in the dark header band on narrow screens.
-      **Pre-existing** — confirmed identical on `master` before the icon swap, so
-      not a regression. Worth revisiting as its own small layout fix.
+- [x] ~~**Mobile nav doesn't surface in the header band at narrow widths**~~
+      (observed while doing the ionicons work, 2026-06-29). The 2014 float-based nav
+      (`.nav { float: right; margin-top: -2.15em }`, `style.css`) was suspected of
+      not showing the icon-only Resume/About links in the dark header band on narrow
+      screens.
+
+      > **Non-issue (2026-06-30).** Confirmed the nav *does* render correctly at
+      > smaller widths — the icon-only Resume/About links surface in the header band
+      > as intended. The original note was an unverified observation; no layout fix
+      > needed.
 > Remaining Tier 2: Typekit dependency, ionicons slim-down, stylesheet
 > bundling/minification (the three judgment-heavy refactors).
 > The `header-subtitle` h2 was left as-is — `display:none` removes it from the
@@ -223,12 +227,32 @@ meta description per-page (`{{ description or site.description }}`) and update
 ## Tier 3 — Tech debt / cleanup (low effort, low urgency)
 
 ### CSS
-- [ ] Obsolete `-webkit/-moz/-o` transition prefixes tripling every rule
+- [x] Obsolete `-webkit/-moz/-o` transition prefixes tripling every rule
       (`style.css:33-36, 49-52, 122-125, 162-165, 171-174`) and `-moz-box-sizing`
       (`style.css:9`, `normalize.css:153,360-361`)
-- [ ] Hardcoded palette repeated ~6× (`#252D38`, `#B9CC72`, `#586A84` …) → CSS
+- [x] Hardcoded palette repeated ~6× (`#252D38`, `#B9CC72`, `#586A84` …) → CSS
       custom properties; the `$VARIABLES` comment block (`style.css:1-5`) pretends
       to be variables but is dead text
+
+> Done on branch `css-vars-prefixes` (2026-06-30). Collapsed all 5 vendor-prefixed
+> `transition` blocks to the single standard `transition` and dropped the
+> `-moz-box-sizing` line (kept the unprefixed `box-sizing`). Replaced the dead
+> `$VARIABLES` comment with a real `:root` block of 8 custom properties and
+> tokenized all 25 color literals in `style.css`.
+> - **`normalize.css` `-moz-box-sizing` (153, 360-361) left as-is** — it's vendored
+>   third-party code covered by the separate *"upgrade normalize.css"* item below;
+>   hand-patching it would just conflict with that upgrade. (Its other prefixes —
+>   `-webkit-appearance`, `::-moz-focus-inner` — are still required and weren't in
+>   scope.) `-webkit-font-smoothing` in `style.css:20` also kept: no standard
+>   equivalent, and not flagged.
+> - **Out of scope by design:** the inline `<style>` on the `noindex` `/schedule`
+>   redirect stubs (`schedule.njk` `#333`/`#2b6cb0`) — those standalone pages don't
+>   load `style.css`.
+> - Verified behavior-preserving: resolving every `var()` reproduces master minus
+>   exactly the dropped prefix lines (267 declaration lines, exact match); build
+>   clean (14 files); no bare hex left outside `:root`. Same computed CSS ⇒
+>   identical render.
+
 - [ ] `transition: all` watches every animatable property (`style.css:33,36,52,165`)
 - [ ] `normalize.css` pinned at v2.1.3 (2013), ~13 years stale (`normalize.css:1`)
 - [ ] Dead form/`label` selectors that never appear in the site
