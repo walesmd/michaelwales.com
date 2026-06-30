@@ -153,8 +153,30 @@ meta description per-page (`{{ description or site.description }}`) and update
   > adversarially verified (completeness, correctness, a11y, regressions) — 0 defects.
 - [x] **CLS:** article images set `width` but no `height`
       (`getting-started-with-gulpjs/index.md:9,11`).
-- [ ] 4 separate unminified/unbundled/non-cache-busted stylesheets in `<head>`
-      (`base.njk:11-14`).
+- [~] 4 separate unminified/unbundled/non-cache-busted stylesheets in `<head>`.
+
+  > **Deprioritized (2026-06-29).** A Lighthouse run showed the page is ~96% Adobe
+  > Typekit (186 KB fonts + a 764 ms render-blocking loader JS); the three local
+  > stylesheets total only ~4.9 KB gzipped, and Lighthouse reports **0 bytes** of
+  > savings from CSS minification. Bundling/minifying is a micro-optimization that
+  > wouldn't move the needle, so we're parking it. The real lever is Typekit (above,
+  > also deferred). If ever revisited, inlining the ~5 KB of CSS into `<head>` (not
+  > bundling to one external file) is the higher-leverage move.
+- [x] **Load the Prism theme only on pages with highlighted code** (perf, surfaced
+      during the 2026-06-29 Lighthouse audit). `prism-github.css` was shipped on every
+      page even though most have no code blocks.
+
+  > Done on branch `prism-conditional` (2026-06-29). Syntax highlighting is done at
+  > **build time** (the `@11ty/eleventy-plugin-syntaxhighlight` plugin bakes
+  > `class="token"`/`language-` markup into the HTML — there is no client-side Prism
+  > JS). `base.njk` now emits the `prism-github.css` `<link>` only when the rendered
+  > `content` contains `language-` markup (`{% if "language-" in (content | string) %}`).
+  > Result: the theme loads on exactly the 2 code pages (gulp, gitconfig) and is
+  > dropped from the other 10 (home, about, resume, 404, 2 schedule stubs, 4 no-code
+  > articles). Verified the invariant (link iff code) across all built pages; confirmed
+  > `prism-github.css` only targets `[class*="language-"]`/`.token`, so the
+  > language-less `resurrecting` article (bare `<pre><code>`) was never styled by it —
+  > zero visual change. Pure build-time, no client JS.
 - [x] Add a `404.html` (GitHub Pages will serve it; currently the generic default).
 
 ### More accessibility
