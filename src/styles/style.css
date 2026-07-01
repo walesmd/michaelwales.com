@@ -114,7 +114,8 @@ blockquote {
     transition: color .15s, background-color .15s;
 }
 
-.nav-item a:hover {
+.nav-item a:hover,
+.nav-item a.is-active {
     color: var(--color-green);
 }
 
@@ -289,7 +290,8 @@ blockquote {
         padding: .25em 1em .25em 1.25em;
     }
 
-    .nav-item a:hover {
+    .nav-item a:hover,
+    .nav-item a.is-active {
         background-color: var(--color-green);
         color: var(--color-dark);
     }

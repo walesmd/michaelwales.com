@@ -1,0 +1,26 @@
+---
+title: Projects
+description: "Self-contained experiences by Michael Wales — simulations, games, and small tools, each living in its own world."
+---
+{% extends "base.njk" %}
+
+{% block content %}
+<div class="projects-page">
+    <h1>Projects</h1>
+    <p class="projects-intro">Self-contained experiences — simulations, games, and small tools — each living in its own world. These pages are just the doorway; step through and you'll land in something built entirely on its own terms.</p>
+
+    <div class="projects-grid">
+        {% for p in projects %}
+        <a class="mw-card pcard" href="/projects/{{ p.slug }}/">
+            <span class="kind"><span class="mw-badge mw-badge--dark">{{ p.card.kind }}</span></span>
+            <div class="mw-card__body">
+                <div><span class="mw-tag mw-tag--accent">{{ p.card.tag }}</span></div>
+                <h2 class="mw-card__title">{{ p.card.title }}</h2>
+                <p class="mw-card__excerpt">{{ p.card.excerpt }}</p>
+                <span class="mw-meta">{{ p.card.meta }}</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

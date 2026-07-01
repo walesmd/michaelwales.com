@@ -1,0 +1,95 @@
+---
+# Generates one branded "threshold" cover page per entry in src/_data/projects.json,
+# at /projects/<slug>/. Each cover is a standalone dark page (it does NOT use the
+# blog's sidebar layout) that gives context, credit, and honest framing, then hands
+# off to the self-contained experience at its launchUrl. Fonts load via the site's
+# existing async Typekit embed; design tokens via /styles/tokens.css.
+pagination:
+  data: projects
+  size: 1
+  alias: project
+  addAllPagesToCollections: true
+permalink: "/projects/{{ project.slug }}/"
+---
+{%- set p = project.cover -%}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ p.title }} — {{ site.title }}</title>
+  <meta name="author" content="{{ site.author }}">
+  <meta name="description" content="{{ project.card.excerpt }}">
+  <link rel="canonical" href="{{ site.url }}/projects/{{ project.slug }}/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/byn8skt.css">
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <style>
+    .icon { display: inline-block; fill: currentColor; vertical-align: -0.125em; flex: none; }
+    body { margin: 0; background: var(--color-dark); color: var(--color-white); min-height: 100vh; display: flex; flex-direction: column; }
+    .pc-bar { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; }
+    .pc-brand { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .pc-brand img { width: 30px; height: 30px; border-radius: 6px; }
+    .pc-wm { font-family: var(--font-display); font-weight: var(--weight-light); letter-spacing: var(--tracking-display); font-size: 1.25rem; color: var(--color-green); white-space: nowrap; }
+    .pc-wm b { font-weight: var(--weight-light); color: var(--color-white); }
+    .pc-back { display: inline-flex; align-items: center; gap: 0.4em; color: rgba(255,255,255,.65); font-family: var(--font-ui); font-size: var(--text-base); text-decoration: none; transition: color var(--dur-fast) var(--ease-standard); }
+    .pc-back:hover { color: var(--color-green); }
+    .pc-back .icon, .pc-brand .icon { width: 1em; height: 1em; }
+    .pc-hero { flex: 1; display: flex; align-items: center; }
+    .pc-inner { max-width: 940px; margin: 0 auto; padding: 2rem 2.5rem 4rem; width: 100%; }
+    .pc-eyebrow { font-family: var(--font-ui); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--color-green); margin-bottom: 1rem; }
+    .pc-inner h1 { font-family: var(--font-display); font-weight: var(--weight-light); letter-spacing: var(--tracking-display); line-height: 1.05; font-size: clamp(2.6rem, 6vw, 4.5rem); color: var(--color-white); margin: 0 0 1.25rem; max-width: 16ch; }
+    .pc-lede { font-family: var(--font-body); font-size: var(--text-md); line-height: var(--leading-relaxed); color: rgba(255,255,255,.82); max-width: 58ch; margin: 0 0 1.75rem; }
+    .pc-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.75rem; }
+    .pc-chip { font-family: var(--font-ui); font-size: var(--text-sm); letter-spacing: var(--tracking-tight); color: rgba(255,255,255,.85); border: 1px solid rgba(255,255,255,.22); border-radius: var(--radius-sm); padding: 0.3em 0.7em; }
+    .pc-note { display: flex; gap: 0.75rem; border-left: 3px solid var(--color-green); background: rgba(185,204,114,.10); padding: 0.9rem 1.1rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; max-width: 58ch; margin-bottom: 2.25rem; }
+    .pc-note .icon { width: 1.2em; height: 1.2em; fill: var(--color-green); flex: none; margin-top: 0.1em; }
+    .pc-note p { margin: 0; font-family: var(--font-body); font-size: var(--text-base); line-height: var(--leading-normal); color: rgba(255,255,255,.85); }
+    .pc-actions { display: flex; flex-wrap: wrap; gap: 0.85rem; align-items: center; }
+    .pc-launch { display: inline-flex; align-items: center; gap: 0.55em; background: var(--color-green); color: var(--color-dark); font-family: var(--font-ui); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); font-size: var(--text-md); padding: 0.65em 1.3em; border-radius: var(--radius-xs); text-decoration: none; transition: transform var(--dur-fast) var(--ease-standard); }
+    .pc-launch:hover { transform: translateY(-1px); }
+    .pc-launch .icon { width: 1.2em; height: 1.2em; }
+    .pc-ghost { display: inline-flex; align-items: center; gap: 0.45em; color: rgba(255,255,255,.8); font-family: var(--font-ui); font-size: var(--text-base); text-decoration: none; padding: 0.65em 0.4em; transition: color var(--dur-fast) var(--ease-standard); }
+    .pc-ghost:hover { color: var(--color-green); }
+    .pc-ghost .icon { width: 1.05em; height: 1.05em; }
+    .pc-leaving { font-family: var(--font-ui); font-size: var(--text-sm); color: rgba(255,255,255,.5); margin-top: 1.5rem; }
+    /* Keyboard focus — the covers don't load normalize/style.css, so define it here */
+    .pc-brand:focus-visible, .pc-back:focus-visible, .pc-ghost:focus-visible { outline: 2px solid var(--color-green); outline-offset: 3px; border-radius: var(--radius-xs); }
+    .pc-launch:focus-visible { outline: 2px solid var(--color-white); outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) {
+      .pc-launch { transition: none; }
+      .pc-launch:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="pc-bar">
+    <a class="pc-brand" href="/"><img src="/favicon.svg" alt=""><span class="pc-wm"><b>M</b>ichael <b>W</b>ales</span></a>
+    <a class="pc-back" href="{{ p.backUrl or '/projects/' }}">{% icon "arrow-left" %} {{ p.backLabel or "Projects" }}</a>
+  </header>
+
+  <main class="pc-hero">
+    <div class="pc-inner">
+      {% if p.eyebrow %}<div class="pc-eyebrow">{{ p.eyebrow }}</div>{% endif %}
+      <h1>{{ p.title }}</h1>
+      {% if p.lede %}<p class="pc-lede">{{ p.lede | safe }}</p>{% endif %}
+
+      {% if p.meta %}<div class="pc-meta">{% for m in p.meta %}<span class="pc-chip">{{ m }}</span>{% endfor %}</div>{% endif %}
+
+      {% if p.note %}
+      <div class="pc-note">{% icon "information-circle" %}<p>{{ p.note | safe }}</p></div>
+      {% endif %}
+
+      <div class="pc-actions">
+        <a class="pc-launch" href="{{ p.launchUrl }}">{{ p.launchLabel or "Launch the experience" }} {% icon "arrow-right" %}</a>
+        {% for l in p.links %}<a class="pc-ghost" href="{{ l.href }}">{% if l.icon %}{% icon l.icon %}{% endif %} {{ l.label }}</a>{% endfor %}
+      </div>
+
+      <p class="pc-leaving">{{ p.leaving or "Opens its own self-contained experience — you'll leave the blog's chrome behind." }}</p>
+    </div>
+  </main>
+</body>
+</html>

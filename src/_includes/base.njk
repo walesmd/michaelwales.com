@@ -47,10 +47,14 @@
 
     <link rel="stylesheet" href="https://use.typekit.net/byn8skt.css">
     <link rel="stylesheet" href="/styles/normalize.css">
-    {%- if "language-" in (content | string) %}
+    {%- if content and "language-" in (content | string) %}
     <link rel="stylesheet" href="/styles/prism-github.css">
     {%- endif %}
     <link rel="stylesheet" href="/styles/style.css">
+    {%- if "/projects/" in page.url %}
+    <link rel="stylesheet" href="/styles/tokens.css">
+    <link rel="stylesheet" href="/styles/projects.css">
+    {%- endif %}
 </head>
 
 <body class="page" itemscope itemtype="https://schema.org/Blog">
@@ -63,12 +67,22 @@
         </header>
 
         <nav>
+            {%- set isArticles = (page.url == "/") or ("/articles/" in page.url) %}
+            {%- set isProjects = "/projects/" in page.url %}
+            {%- set isAbout = "/about/" in page.url %}
+            {%- set isResume = "/resume/" in page.url %}
             <ul class="nav">
                 <li class="nav-item">
-                   <a href="/resume/" title="Resume" aria-label="Resume">{% icon "document-text" %}<span>Resume</span></a>
+                    <a href="/" title="Articles" aria-label="Articles" class="{{ 'is-active' if isArticles else '' }}"{% if isArticles %} aria-current="page"{% endif %}>{% icon "newspaper" %}<span>Articles</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="/about/" title="About" aria-label="About">{% icon "information-circle" %}<span>About</span></a>
+                    <a href="/projects/" title="Projects" aria-label="Projects" class="{{ 'is-active' if isProjects else '' }}"{% if isProjects %} aria-current="page"{% endif %}>{% icon "squares-2x2" %}<span>Projects</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about/" title="About" aria-label="About" class="{{ 'is-active' if isAbout else '' }}"{% if isAbout %} aria-current="page"{% endif %}>{% icon "information-circle" %}<span>About</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/resume/" title="Resume" aria-label="Resume" class="{{ 'is-active' if isResume else '' }}"{% if isResume %} aria-current="page"{% endif %}>{% icon "document-text" %}<span>Resume</span></a>
                 </li>
             </ul>
         </nav>
