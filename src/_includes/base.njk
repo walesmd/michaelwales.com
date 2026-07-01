@@ -51,7 +51,9 @@
     <link rel="stylesheet" href="/styles/prism-github.css">
     {%- endif %}
     <link rel="stylesheet" href="/styles/style.css">
-    {%- if "/projects/" in page.url %}
+    {#- normalize: page.url is `false` for permalink:false (unpublished) pages -#}
+    {%- set navUrl = page.url or "" %}
+    {%- if "/projects/" in navUrl %}
     <link rel="stylesheet" href="/styles/tokens.css">
     <link rel="stylesheet" href="/styles/projects.css">
     {%- endif %}
@@ -67,10 +69,10 @@
         </header>
 
         <nav>
-            {%- set isArticles = (page.url == "/") or ("/articles/" in page.url) %}
-            {%- set isProjects = "/projects/" in page.url %}
-            {%- set isAbout = "/about/" in page.url %}
-            {%- set isResume = "/resume/" in page.url %}
+            {%- set isArticles = (navUrl == "/") or ("/articles/" in navUrl) %}
+            {%- set isProjects = "/projects/" in navUrl %}
+            {%- set isAbout = "/about/" in navUrl %}
+            {%- set isResume = "/resume/" in navUrl %}
             <ul class="nav">
                 <li class="nav-item">
                     <a href="/" title="Articles" aria-label="Articles" class="{{ 'is-active' if isArticles else '' }}"{% if isArticles %} aria-current="page"{% endif %}>{% icon "newspaper" %}<span>Articles</span></a>
