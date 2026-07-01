@@ -85,6 +85,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
   eleventyConfig.addPassthroughCopy("src/favicon.svg");
   eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
+  // Style-isolated "back to michaelwales.com" pill, loaded by self-contained
+  // experiences from https://michaelwales.com/return-chip.js
+  eleventyConfig.addPassthroughCopy("src/return-chip.js");
 
   // Copy article images (co-located with posts)
   eleventyConfig.addPassthroughCopy("src/articles/**/*.{png,jpg,jpeg,gif,svg,webp}");
