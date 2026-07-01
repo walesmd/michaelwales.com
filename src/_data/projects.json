@@ -1,28 +1,5 @@
 [
   {
-    "slug": "codepath-sim",
-    "card": {
-      "title": "What a Simulated Cohort Taught Us",
-      "excerpt": "An interactive research report: we ran the first month of the Claude Corps fellowship as a synthetic cohort to find where the design bends under load.",
-      "tag": "Claude Corps",
-      "kind": "Report",
-      "meta": "Jun 2026 · CodePath × Anthropic"
-    },
-    "cover": {
-      "eyebrow": "Project · Claude Corps · Program Simulation",
-      "title": "What a Simulated Cohort Taught Us",
-      "lede": "Before a single fellow arrived, we ran the first month of Claude Corps as a simulation — a synthetic cohort of host organizations, applicants, and mentors — and played it forward week by week to find where the program design bends under load.",
-      "meta": ["Program Strategy", "CodePath × Anthropic", "June 2026", "Interactive report"],
-      "note": "A research instrument, not a forecast. Every person and outcome inside is <strong>synthetic</strong> — said loudly and up front. The value is in the dynamics it exposes, not in any specific number.",
-      "launchUrl": "/codepath-sim/",
-      "launchLabel": "Launch the experience",
-      "links": [
-        { "label": "Read the companion essay", "href": "/articles/research-at-the-hourly-scale/", "icon": "arrow-right" },
-        { "label": "Source", "href": "https://github.com/walesmd/codepath-sim", "icon": "arrow-up-right" }
-      ]
-    }
-  },
-  {
     "slug": "eldoria",
     "card": {
       "title": "The Shattered Crown",
