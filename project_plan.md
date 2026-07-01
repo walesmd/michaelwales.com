@@ -344,36 +344,44 @@ Source of truth lives in `.claude/skills/michael-wales-design/` (`SKILL.md`,
    our 8 duplicated `:root` vars now that `tokens/colors.css` supplies them" —
    identical values, so a safe no-op swap.
 
+## Strategy (updated 2026-06-30)
+
+After review we decided **not** to run the migration PRs A–E as standalone work:
+the site already works and its palette is already tokenized in `:root`, so
+adopting the whole system on existing pages is a marginal-benefit refactor with
+no user-facing payoff. Instead we go **feature-first** — build a new surface and
+carry in only the tokens + component slice that surface actually needs, scoped so
+existing pages download none of it. Tokens still bundle at build time (no runtime
+`@import`), and fonts stay on the existing async Typekit embed (never
+`tokens/fonts.css`).
+
 ## Sequence
 
-PRs A–E are the migration (looks identical, better foundation). F onward is the
-new capability — each needs a real visual/design review, not just a build check.
-
-- [ ] **A — Install tokens (invisible).** Bring in `tokens/` (minus `fonts.css`)
-      + `components.css`. Wire into the build by **concatenating**, not runtime
-      `@import`. Build output byte-identical.
-- [ ] **B — Tokenize / dedup (invisible, safety checkpoint).** Delete the 8
-      now-duplicated `:root` vars from `style.css`; point everything at the token
-      vars. Visual diff must be zero.
-- [ ] **C — `base.njk` onto components (invisible-ish).** Sidebar/nav →
-      `.mw-sidebar` / `.mw-nav` / `.mw-nav-item`; set `is-active` from
-      `page.url`. Delete dead bespoke CSS as it's replaced.
-- [ ] **D — Pages onto components (invisible-ish).** `home.njk`, `article.njk`,
-      About/Resume → `.mw-*` classes (or the `components.njk` macros). Social
-      links → `.mw-social`, content → `.mw-prose`.
-- [ ] **E — Navy code theme (first intentional visual change).** Swap
-      `prism-github.css` → `assets/prism-navy.css` in `base.njk`. Verify on an
-      article with code (e.g. the Gulp post).
+- [ ] **A–E — Migrate existing pages onto the system** (install tokens site-wide,
+      tokenize/dedup `style.css`, move `base.njk`/pages onto `.mw-*` classes, navy
+      code theme). **Deferred / likely skipped** — marginal benefit; revisit only
+      if a concrete need appears.
 - [ ] **F — Topics / tagging (feature).** Add `topic` front-matter field;
       backfill posts; topic chips (`.mw-tag`) + article-count row on `home.njk`.
       Optional `/topics/<topic>/` archive pages.
-- [ ] **G — Projects shell (feature).** `Projects` nav item + `/projects/` index
-      from `examples/projects-index.html` (driven by a `projects` data file);
-      `project-cover.njk` per experience (start with `codepath-sim`); wire the
-      `return-chip.js` `<mw-return>` into each experience repo.
-- [ ] **H — Polish (feature).** Confirm Typekit loads in prod; replace stand-in
-      Projects content with real entries; accessibility pass (focus-visible,
-      contrast on navy surfaces, `prefers-reduced-motion`).
+- [x] **G — Projects shell (feature).** Done on branch `projects-section`
+      (2026-06-30). `Articles` + `Projects` nav items (active-state +
+      `aria-current`, Heroicons added to `eleventy.config.js`); data-driven
+      `/projects/` index (`src/_data/projects.json`) rendering the card slice of
+      `components.css`; one navy "threshold" cover per project at
+      `/projects/<slug>/` via pagination (`src/project-cover.njk`). Real content +
+      live launch URLs for `codepath-sim`, `eldoria` (*The Shattered Crown*), and
+      `elevator-algorithm-game`. Design-system CSS is scoped to
+      `src/styles/tokens.css` + `src/styles/projects.css`, linked **only** on
+      `/projects/` — existing pages' CSS payload is byte-identical. Fonts via the
+      existing async Typekit embed, not `tokens/fonts.css`. Adversarially verified
+      (payload/brand/correctness clean; focus-visible + `aria-current` a11y gaps
+      found and fixed). **Not** done: wiring `return-chip.js` `<mw-return>` into
+      each experience repo (separate follow-up, those are their own repos).
+- [ ] **H — Polish (feature).** Expand/replace Projects entries as needed; broader
+      accessibility pass. (Projects covers already ship focus-visible +
+      `prefers-reduced-motion`; nav current-page is color + `aria-current` — a
+      non-color desktop affordance for WCAG 1.4.1 is still open.)
 
 ## Definition of done per PR
 

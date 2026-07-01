@@ -1,0 +1,69 @@
+/* ===========================================================================
+   PROJECTS — michaelwales.com
+   Scoped styles for the /projects/ index page ONLY (base.njk links this and
+   tokens.css just for that route, so every other page downloads none of it).
+   The .mw-* classes are the card/tag/badge/meta slice of the design system's
+   components.css, verbatim — only the parts the index actually uses.
+   =========================================================================== */
+
+/* --- Index layout --- */
+.projects-page { padding: .5em 1em; max-width: 62em; }
+.projects-intro {
+  font-family: var(--font-body); font-size: var(--text-md); color: var(--text-muted);
+  max-width: 52ch; margin: 0 0 var(--space-6); line-height: var(--leading-relaxed);
+}
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+.pcard { position: relative; }
+.pcard .kind { position: absolute; top: var(--space-3); right: var(--space-3); }
+@media (max-width: 640px) { .projects-grid { grid-template-columns: 1fr; } }
+@media all and (min-width: 780px) { .projects-page { padding: .5em 3em; } }
+
+/* --- TAG (topic chip) --- */
+.mw-tag {
+  display: inline-flex; align-items: center; gap: 0.35em;
+  font-family: var(--font-ui); font-size: var(--text-sm); font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-tight); line-height: 1; white-space: nowrap;
+  padding: 0.35em 0.7em; border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
+  background: transparent; color: var(--text-link); text-decoration: none;
+}
+.mw-tag--accent { background: var(--bg-accent-soft); color: var(--color-dark); border-color: transparent; }
+
+/* --- BADGE --- */
+.mw-badge {
+  display: inline-flex; align-items: center; gap: 0.4em;
+  font-family: var(--font-ui); font-size: var(--text-xs); font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide); text-transform: uppercase; line-height: 1; white-space: nowrap;
+  padding: 0.3em 0.6em; border-radius: var(--radius-sm);
+  background: var(--bg-sunken); color: var(--text-muted);
+}
+.mw-badge--dark { background: var(--bg-inverse); color: var(--text-inverse); }
+
+/* --- META --- */
+.mw-meta {
+  display: inline-flex; align-items: center; gap: 0.5em;
+  color: var(--text-muted); font-family: var(--font-ui); font-size: var(--text-sm);
+  letter-spacing: var(--tracking-tight);
+}
+.mw-meta__sep { opacity: 0.5; }
+
+/* --- CARD --- */
+.mw-card {
+  display: flex; flex-direction: column; background: var(--bg-page);
+  border: 1px solid var(--border-subtle); border-radius: var(--radius-md);
+  overflow: hidden; text-decoration: none;
+  transition: border-color var(--dur-base) var(--ease-standard),
+              box-shadow var(--dur-base) var(--ease-standard),
+              transform var(--dur-base) var(--ease-standard);
+}
+.mw-card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.mw-card__body { padding: var(--pad-card); display: flex; flex-direction: column; gap: var(--space-3); }
+.mw-card__title { font-size: var(--text-lg); color: var(--text-strong); transition: color var(--dur-base) var(--ease-standard); }
+.mw-card:hover .mw-card__title { color: var(--text-link); }
+.mw-card__excerpt { margin: 0; color: var(--text-body); font-size: var(--text-base); line-height: var(--leading-relaxed); }
+.mw-card:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+
+/* --- Respect reduced-motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .mw-card { transition: none; }
+  .mw-card:hover { transform: none; }
+}
