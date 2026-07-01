@@ -1,6 +1,7 @@
 ---
 title: What Algorithm Runs an Elevator?
 date: 2026-06-26
+topic: Engineering
 description: "A question caught me waiting for an elevator at Universal Orlando: how does it decide who to pick up? So I built a little world to run elevators myself and find out."
 ---
 

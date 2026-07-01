@@ -56,6 +56,9 @@
     {%- if "/projects/" in navUrl %}
     <link rel="stylesheet" href="/styles/tokens.css">
     <link rel="stylesheet" href="/styles/projects.css">
+    {%- elif (navUrl == "/") or ("/topics/" in navUrl) %}
+    <link rel="stylesheet" href="/styles/tokens.css">
+    <link rel="stylesheet" href="/styles/topics.css">
     {%- endif %}
 </head>
 
@@ -69,7 +72,7 @@
         </header>
 
         <nav>
-            {%- set isArticles = (navUrl == "/") or ("/articles/" in navUrl) %}
+            {%- set isArticles = (navUrl == "/") or ("/articles/" in navUrl) or ("/topics/" in navUrl) %}
             {%- set isProjects = "/projects/" in navUrl %}
             {%- set isAbout = "/about/" in navUrl %}
             {%- set isResume = "/resume/" in navUrl %}

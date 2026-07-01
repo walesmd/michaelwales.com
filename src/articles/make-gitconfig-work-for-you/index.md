@@ -1,6 +1,7 @@
 ---
 title: Make .gitconfig Work for You
 date: 2014-03-19
+topic: Engineering
 description: "Git's real power lives on the command line. A tour of the .gitconfig file—its scopes, aliases, and settings—to make Git work the way you do."
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Learn Web Development, First
 date: 2014-02-20
+topic: Learning
 description: "Frameworks and languages come and go; HTML, CSS, and JavaScript are the constant. A case for learning the fundamentals of the web before committing to any single stack."
 ---
 

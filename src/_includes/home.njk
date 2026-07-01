@@ -1,7 +1,21 @@
 {% extends "base.njk" %}
 
 {% block content %}
-<article class="post">
+<div class="articles-page">
+    <h1>Articles</h1>
+    <p class="articles-intro">Writing on engineering leadership, learning, and building in the AI era — the questions I'm working through, thought out in the open.</p>
+
+    <div class="topic-bar">
+        <div class="topic-filter">
+            <span class="mw-tag mw-tag--dark" aria-current="page">All</span>
+            {%- for t in collections.topics %}
+            <a class="mw-tag" href="/topics/{{ t.slug }}/">{% icon "tag" %}{{ t.name }}</a>
+            {%- endfor %}
+        </div>
+        {%- set count = collections.articles | length %}
+        <span class="topic-count">{{ count }} article{{ "s" if count != 1 }}</span>
+    </div>
+
     <ol class="articles-list">
         {% for article in collections.articles %}
         <li class="article-list-item" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
@@ -10,5 +24,5 @@
         </li>
         {% endfor %}
     </ol>
-</article>
+</div>
 {% endblock %}

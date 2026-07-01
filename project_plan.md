@@ -361,9 +361,26 @@ existing pages download none of it. Tokens still bundle at build time (no runtim
       tokenize/dedup `style.css`, move `base.njk`/pages onto `.mw-*` classes, navy
       code theme). **Deferred / likely skipped** — marginal benefit; revisit only
       if a concrete need appears.
-- [ ] **F — Topics / tagging (feature).** Add `topic` front-matter field;
-      backfill posts; topic chips (`.mw-tag`) + article-count row on `home.njk`.
-      Optional `/topics/<topic>/` archive pages.
+- [x] **F — Topics / tagging (feature).** Done on branch `topics-tagging`
+      (2026-07-01). Added a `topic` front-matter field (Engineering ×4, Learning;
+      `AI Programs` set **dormant** on the unpublished hourly-scale post — no
+      chip/archive/count/sitemap entry while it's excluded). `home.njk` gains an
+      `Articles` section heading + intro (mirroring the Projects page's
+      `.projects-page`/`.projects-intro` pattern) and a topic filter bar (`All` +
+      per-topic `.mw-tag` chips) with a right-aligned article count. Per-article topic
+      chips were intentionally **left off** the homepage list for now — the article-row
+      presentation is a separate future redesign; the list stays the plain
+      titles+dates it was. Data-driven `/topics/<slug>/` archives via a new
+      `topics` collection + paginated `src/topics.njk` (one page per topic,
+      newest-first, `addAllPagesToCollections` so all land in the sitemap); chips are
+      plain links — **no client JS**. Design-system CSS scoped to a new
+      `src/styles/topics.css` (+ `tokens.css`) linked **only** on `/` and `/topics/`
+      via `base.njk` — every existing page is byte-identical (verified by master build
+      diff) and `/projects/` payload is unchanged. Fonts via the existing async Typekit
+      embed (never `tokens/fonts.css`). Added a `tag` icon + `topicSlug` filter to
+      `eleventy.config.js`; `/topics/` registers as `Articles` in the nav. Adversarially
+      verified across 4 lenses (correctness + CSS-regression **clean**); a11y fixes
+      applied — `aria-current` on the active chip, `:focus-visible` ring on chip links.
 - [x] **G — Projects shell (feature).** Done on branch `projects-section`
       (2026-06-30). `Articles` + `Projects` nav items (active-state +
       `aria-current`, Heroicons added to `eleventy.config.js`); data-driven

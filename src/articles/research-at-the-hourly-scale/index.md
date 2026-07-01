@@ -2,6 +2,9 @@
 title: Research at the Hourly Scale
 date: 2026-06-24
 description: "We stress-tested a year-long fellowship by simulating a synthetic cohort before any real fellow showed up—and why that kind of research happens at the hourly scale at CodePath."
+# topic is dormant while this post is unpublished (excluded from collections, so it
+# creates no chip, no /topics/ archive, and no count); set for when it republishes.
+topic: AI Programs
 # Archived 2026-06-30: fully unpublished (references the not-public codepath-sim
 # project). permalink:false stops the page from building (404); excluded from all
 # collections so it drops off the homepage list, Atom feed, and sitemap. Content

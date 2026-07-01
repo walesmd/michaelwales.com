@@ -1,6 +1,7 @@
 ---
 title: Getting Started with GulpJS
 date: 2014-02-12
+topic: Engineering
 description: "Why I moved my build workflow from Grunt to Gulp—a faster, stream-based task runner where you program your tasks in plain JavaScript instead of configuring them."
 ---
 
