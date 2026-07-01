@@ -1,0 +1,46 @@
+---js
+{
+  // One archive page per topic, at /topics/<slug>/. Extends the blog chrome
+  // (sidebar + nav) via base.njk; loads tokens.css + topics.css (see base.njk).
+  pagination: { data: "collections.topics", size: 1, alias: "topic", addAllPagesToCollections: true },
+  permalink: (data) => `/topics/${data.topic.slug}/`,
+  eleventyComputed: {
+    title: (data) => data.topic.name,
+    description: (data) => {
+      const n = data.topic.posts.length;
+      return `Writing on ${data.topic.name} by Michael Wales — ${n} article${n === 1 ? "" : "s"}.`;
+    }
+  }
+}
+---
+{% extends "base.njk" %}
+
+{% block content %}
+<div class="articles-page">
+    <div class="topic-bar">
+        <div class="topic-filter">
+            <a class="mw-tag" href="/">All</a>
+            {%- for t in collections.topics %}
+            {%- if t.slug == topic.slug %}
+            <span class="mw-tag mw-tag--dark" aria-current="page">{% icon "tag" %}{{ t.name }}</span>
+            {%- else %}
+            <a class="mw-tag" href="/topics/{{ t.slug }}/">{% icon "tag" %}{{ t.name }}</a>
+            {%- endif %}
+            {%- endfor %}
+        </div>
+        {%- set count = topic.posts | length %}
+        <span class="topic-count">{{ count }} article{{ "s" if count != 1 }}</span>
+    </div>
+
+    <h1 class="topic-heading">{{ topic.name }}</h1>
+
+    <ol class="articles-list">
+        {% for article in topic.posts %}
+        <li class="article-list-item" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+            <h2 class="post-title" itemprop="name"><a href="{{ article.url }}">{{ article.data.title }}</a></h2>
+            <time class="post-date" datetime="{{ article.date | htmlDateString }}" itemprop="datePublished">{{ article.date | readableDate }}</time>
+        </li>
+        {% endfor %}
+    </ol>
+</div>
+{% endblock %}

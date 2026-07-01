@@ -1,6 +1,7 @@
 ---
 title: Resurrecting a 2014 Codebase in 2026
 date: 2026-01-10
+topic: Engineering
 description: "Reviving a brittle, decade-old blog buried under technical debt—handing the whole repository to Claude Code and migrating from Wintersmith to a modern Eleventy build."
 ---
 

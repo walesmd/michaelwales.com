@@ -17,8 +17,16 @@ const ICONS = {
   "squares-2x2": { viewBox: "0 0 24 24", body: '<path fill-rule="evenodd" d="M3 6a3 3 0 0 1 3-3h2.25a3 3 0 0 1 3 3v2.25a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6Zm9.75 0a3 3 0 0 1 3-3H18a3 3 0 0 1 3 3v2.25a3 3 0 0 1-3 3h-2.25a3 3 0 0 1-3-3V6ZM3 15.75a3 3 0 0 1 3-3h2.25a3 3 0 0 1 3 3V18a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-2.25Zm9.75 0a3 3 0 0 1 3-3H18a3 3 0 0 1 3 3V18a3 3 0 0 1-3 3h-2.25a3 3 0 0 1-3-3v-2.25Z" clip-rule="evenodd"/>' },
   "arrow-left": { viewBox: "0 0 24 24", body: '<path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/>' },
   "arrow-right": { viewBox: "0 0 24 24", body: '<path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/>' },
-  "arrow-up-right": { viewBox: "0 0 24 24", body: '<path fill-rule="evenodd" d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z" clip-rule="evenodd"/>' }
+  "arrow-up-right": { viewBox: "0 0 24 24", body: '<path fill-rule="evenodd" d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z" clip-rule="evenodd"/>' },
+
+  // Heroicons solid — added for topic chips on the homepage / topic archives.
+  "tag": { viewBox: "0 0 24 24", body: '<path fill-rule="evenodd" d="M5.25 2.25a3 3 0 0 0-3 3v4.318a3 3 0 0 0 .879 2.121l9.58 9.581c.92.92 2.39.92 3.31 0l4.95-4.95c.92-.92.92-2.39 0-3.31L11.39 3.129A3 3 0 0 0 9.27 2.25H5.25Zm4.5 5.25a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" clip-rule="evenodd"/>' }
 };
+
+// Slugify a topic name for its /topics/<slug>/ URL. Shared by the topics
+// collection and the `topicSlug` template filter so links and pages always match.
+const slugifyTopic = (name) =>
+  String(name).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 
 module.exports = function(eleventyConfig) {
   // Syntax highlighting plugin (replaces highlight.js)
@@ -43,10 +51,32 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-MM-dd");
   });
 
+  // Topic name -> URL slug (e.g. "AI Programs" -> "ai-programs")
+  eleventyConfig.addFilter("topicSlug", slugifyTopic);
+
   // Custom collection: articles sorted by date descending
   eleventyConfig.addCollection("articles", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/articles/*/index.md")
       .sort((a, b) => b.date - a.date);
+  });
+
+  // Custom collection: topics — one entry per distinct `topic` across published
+  // articles, each with its slug and its posts (newest first). Unpublished posts
+  // (eleventyExcludeFromCollections) are absent from collections.all, so they
+  // never create a topic here. Topics are sorted alphabetically for stable order.
+  eleventyConfig.addCollection("topics", function(collectionApi) {
+    const posts = collectionApi.getFilteredByGlob("src/articles/*/index.md")
+      .filter((p) => p.data.topic)
+      .sort((a, b) => b.date - a.date);
+    const byName = new Map();
+    for (const post of posts) {
+      const name = post.data.topic;
+      if (!byName.has(name)) {
+        byName.set(name, { name, slug: slugifyTopic(name), posts: [] });
+      }
+      byName.get(name).posts.push(post);
+    }
+    return Array.from(byName.values()).sort((a, b) => a.name.localeCompare(b.name));
   });
 
   // Passthrough copy for static assets
