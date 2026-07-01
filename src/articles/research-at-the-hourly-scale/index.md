@@ -2,6 +2,12 @@
 title: Research at the Hourly Scale
 date: 2026-06-24
 description: "We stress-tested a year-long fellowship by simulating a synthetic cohort before any real fellow showed up—and why that kind of research happens at the hourly scale at CodePath."
+# Archived 2026-06-30: fully unpublished (references the not-public codepath-sim
+# project). permalink:false stops the page from building (404); excluded from all
+# collections so it drops off the homepage list, Atom feed, and sitemap. Content
+# retained in the repo — remove these two lines to republish.
+permalink: false
+eleventyExcludeFromCollections: true
 ---
 
 Talent is everywhere. Opportunity isn't. That sentence is most of the reason I joined [CodePath](https://www.codepath.org/) as Senior Director of AI Programs, and it sits underneath everything we build. CodePath has spent almost a decade taking first-generation and low-income computing students - most from households earning under $60,000 a year - and getting them into real tech careers, at about a two-in-three rate. The talent was always there. What was missing was a door.
