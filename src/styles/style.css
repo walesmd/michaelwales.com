@@ -114,9 +114,13 @@ blockquote {
     transition: color .15s, background-color .15s;
 }
 
+/* Green fill + dark text (not color alone) so the current page is distinguishable
+   without relying on hue — WCAG 1.4.1. Matches the >=780px sidebar treatment; this
+   base rule covers the icon-only nav shown below 780px. */
 .nav-item a:hover,
 .nav-item a.is-active {
-    color: var(--color-green);
+    background-color: var(--color-green);
+    color: var(--color-dark);
 }
 
 .nav-item span {
